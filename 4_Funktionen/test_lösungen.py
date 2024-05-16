@@ -7,19 +7,19 @@ def test_aufgabe_1(capfd):
     assert out.out == 'Hallo Welt!\n'
 
 def test_aufgabe_2():
-    l_aufgabe_2.addiere(1, 2) == 3
-    l_aufgabe_2.addiere(3, 4) == 7
-    l_aufgabe_2.addiere(5, 6) == 11
+    assert l_aufgabe_2.addiere(1, 2) == 3
+    assert l_aufgabe_2.addiere(3, 4) == 7
+    assert l_aufgabe_2.addiere(5, 6) == 11
 
 def test_aufgabe_3():
-    l_aufgabe_3.ist_positiv(1) == True
-    l_aufgabe_3.ist_positiv(0) == False
-    l_aufgabe_3.ist_positiv(-1) == False
+    assert l_aufgabe_3.ist_positiv(1) == True
+    assert l_aufgabe_3.ist_positiv(0) == False
+    assert l_aufgabe_3.ist_positiv(-1) == False
 
 def test_aufgabe_4():
-    l_aufgabe_4.ist_teilbar(4, 2) == True
-    l_aufgabe_4.ist_teilbar(4, 3) == False
-    l_aufgabe_4.ist_teilbar(4, 4) == True
+    assert l_aufgabe_4.ist_teilbar(4, 2) == True
+    assert l_aufgabe_4.ist_teilbar(4, 3) == False
+    assert l_aufgabe_4.ist_teilbar(4, 4) == True
 
 def test_aufgabe_5(capfd):
     l_aufgabe_5.drucke_bis_zehn()
