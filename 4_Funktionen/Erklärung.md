@@ -40,7 +40,7 @@ Beispiel:
 
 
 ```python
-def sag_hallo(name):
+def sag_hallo(name: str) -> None:
     print("Hallo,", name, "!")
 
 ```
@@ -61,7 +61,7 @@ Beispiel:
 
 
 ```python
-def verdopple_zahl(zahl):
+def verdopple_zahl(zahl: int) -> int:
     return zahl * 2
 
 ```
