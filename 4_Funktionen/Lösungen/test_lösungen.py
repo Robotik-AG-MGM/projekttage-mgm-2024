@@ -1,5 +1,5 @@
 import pytest
-from Lösungen import l_aufgabe_1, l_aufgabe_2, l_aufgabe_3, l_aufgabe_4, l_aufgabe_5
+import l_aufgabe_1, l_aufgabe_2, l_aufgabe_3, l_aufgabe_4, l_aufgabe_5
 
 def test_aufgabe_1(capfd):
     l_aufgabe_1.hallo_welt()
