@@ -1,4 +1,4 @@
-# Python-Funktionen erklärt
+# Python-Funktionen Erklärt
 
 In  Python  sind Funktionen eine Möglichkeit, Code zu organisieren und wiederzuverwenden. Funktionen führen spezifische Aufgaben aus, wenn sie aufgerufen werden. Hier sind die Grundlagen, die Schüler über  Python-Funktionen wissen sollten:
 
