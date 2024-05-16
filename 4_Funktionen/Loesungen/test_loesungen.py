@@ -1,5 +1,3 @@
-import pytest
-
 import l_aufgabe_1
 import l_aufgabe_2
 import l_aufgabe_3
