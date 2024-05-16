@@ -20,4 +20,4 @@ jobs:
         pip install pytest
     - name: Teste Lösungen
       run: |
-        pytest -k "lösungen"
+        pytest -k "loesungen"
