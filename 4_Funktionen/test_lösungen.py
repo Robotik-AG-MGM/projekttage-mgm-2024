@@ -1,23 +1,27 @@
 import pytest
-from "LÖSUNGEN!" import aufgabe_1, aufgabe_2, aufgabe_3, aufgabe_4, aufgabe_5
+from Lösungen import l_aufgabe_1, l_aufgabe_2, l_aufgabe_3, l_aufgabe_4, l_aufgabe_5
 
-def test_aufgabe_1():
-    assert aufgabe_1.hallo_welt() == "Hallo Welt!"
+def test_aufgabe_1(capfd):
+    l_aufgabe_1.hallo_welt()
+    out = capfd.readouterr()
+    assert out.out == 'Hallo Welt!\n'
 
 def test_aufgabe_2():
-    aufgabe_2.addiere(1, 2) == 3
-    aufgabe_2.addiere(3, 4) == 7
-    aufgabe_2.addiere(5, 6) == 11
+    l_aufgabe_2.addiere(1, 2) == 3
+    l_aufgabe_2.addiere(3, 4) == 7
+    l_aufgabe_2.addiere(5, 6) == 11
 
 def test_aufgabe_3():
-    aufgabe_3.ist_positiv(1) == True
-    aufgabe_3.ist_positiv(0) == False
-    aufgabe_3.ist_positiv(-1) == False
+    l_aufgabe_3.ist_positiv(1) == True
+    l_aufgabe_3.ist_positiv(0) == False
+    l_aufgabe_3.ist_positiv(-1) == False
 
 def test_aufgabe_4():
-    aufgabe_4.ist_teilbar(4, 2) == True
-    aufgabe_4.ist_teilbar(4, 3) == False
-    aufgabe_4.ist_teilbar(4, 4) == True
+    l_aufgabe_4.ist_teilbar(4, 2) == True
+    l_aufgabe_4.ist_teilbar(4, 3) == False
+    l_aufgabe_4.ist_teilbar(4, 4) == True
 
-def test_aufgabe_5():
-    aufgabe_5.drucke_bis_zehn() == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+def test_aufgabe_5(capfd):
+    l_aufgabe_5.drucke_bis_zehn()
+    out = capfd.readouterr()
+    assert out.out == '1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n'
