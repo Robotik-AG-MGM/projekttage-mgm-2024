@@ -16,6 +16,7 @@
 4.  **Funktionen mit Bedingungen:**
 
     -   Schreibe eine Funktion  `ist_teilbar(durch, zahl)`, die prüft, ob eine Zahl durch eine andere teilbar ist.
+    Kleiner Tipp: Du kannst mit print(type(x)) den Datentypen herausfinden ;)
 
         
 5.  **Funktionen mit Schleifen:**

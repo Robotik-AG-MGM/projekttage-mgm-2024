@@ -54,11 +54,12 @@
         
         
         ```python
-        def ist_teilbar(durch, zahl):
-            if zahl % durch == 0:
-                return True
-            else:
-                return False
+        x = zahl / durch
+
+    if type(x) == int:
+        print(zahl,"ist durch",durch,"teilbar")
+    else:
+        print("Ist nicht teilbar :c")
         
         print(ist_teilbar(3, 9))  # Ausgabe: True
         
