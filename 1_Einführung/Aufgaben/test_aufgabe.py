@@ -11,10 +11,18 @@ def test_aufgabe_2_exists():
 
 
 def test_aufgabe_1_output():
-    output = subprocess.check_output(["python", "1_Einführung/Aufgaben/aufgabe_1.py"]).decode("utf-8").strip()
+    output = (
+        subprocess.check_output(["python", "1_Einführung/Aufgaben/aufgabe_1.py"])
+        .decode("utf-8")
+        .strip()
+    )
     assert output == "Hallo, Welt!", "Output is not 'Hallo, Welt!'"
 
 
 def test_aufgabe_2_output():
-    output = subprocess.check_output(["python", "1_Einführung/Aufgaben/aufgabe_2.py"]).decode("utf-8").strip()
+    output = (
+        subprocess.check_output(["python", "1_Einführung/Aufgaben/aufgabe_2.py"])
+        .decode("utf-8")
+        .strip()
+    )
     assert output == "Name: Max , Alter: 20", "Output is not 'Name: Max , Alter: 20'"
