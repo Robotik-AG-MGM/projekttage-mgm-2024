@@ -8,7 +8,8 @@
                 "ms-python.python",
                 "ms-toolsai.jupyter",
                 "ms-python.flake8",
-                "njpwerner.autodocstring"
+                "njpwerner.autodocstring",
+                "github.classroom"
             ]
         }
     }
