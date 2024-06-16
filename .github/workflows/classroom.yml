@@ -13,16 +13,15 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: 'Aufgabe '
-      id: aufgabe
+    - name: Bewertung
+      id: bewertung
       uses: classroom-resources/autograding-python-grader@v1
       with:
         timeout: 10
-        max-score: 5
         setup-command: ''
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        AUFGABE_RESULTS: "${{steps.aufgabe.outputs.result}}"
+        BEWERTUNG_RESULTS: "${{steps.bewertung.outputs.result}}"
       with:
-        runners: aufgabe
+        runners: bewertung
