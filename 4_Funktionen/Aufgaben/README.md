@@ -6,11 +6,11 @@
         
 2.  **Funktionen mit Parametern:**
 
-    -   Definiere eine Funktion  `addiere(a: int, b: int) -> int`, die zwei Zahlen addiert und das Ergebnis zurückgibt.
+    -   Definiere eine Funktion  `addiere(a: int, b: int) -> int`, die zwei Zahlen addiert und das Ergebnis zurück gibt.
         
 3.  **Funktionen mit Rückgabewerten:**
 
-    -   Erstelle eine Funktion  `ist_positiv(zahl: int) -> bool`, die überprüft, ob eine Zahl positiv ist und  `True`  oder  `False`  zurückgibt.
+    -   Erstelle eine Funktion  `ist_positiv(zahl: int) -> bool`, die überprüft, ob eine Zahl positiv ist und  `True`  oder  `False`  zurück gibt.
 
         
 4.  **Funktionen mit Bedingungen:**
@@ -20,4 +20,4 @@
         
 5.  **Funktionen mit Schleifen:**
 
-    -   Definiere eine Funktion  `drucke_bis_zehn() -> None`, die die Zahlen von 1 bis 10 ausgibt.
+    -   Definiere eine Funktion  `drucke_bis_zehn() -> None`, die die Zahlen von 1 bis 10 aus gibt.
