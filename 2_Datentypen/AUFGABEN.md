@@ -26,3 +26,22 @@ Das sind die Aufgaben und bevor ihr fragt, schaut aufs README.md
 
 - Schreibe die Tage von Montag - Samstag in die Liste rein und gib die Liste aus
 - Füge mit `wochentage.append()` Sonntag hinzu und gib die Liste nochmal aus
+
+---
+---
+
+## **Tuples**
+
+**1.** Erstelle ein `Tuple` mit Verschiedenen Zahlen und gib diesen aus
+
+---
+---
+
+## **Dictionary**
+
+**1.** Erstelle ein `Dictionary` mit Namen und Alter von einer Person und gib das Alter aus 
+
+---
+---
+
+Lösungen gibt es bei der LÖSUNGEN.md Datei
