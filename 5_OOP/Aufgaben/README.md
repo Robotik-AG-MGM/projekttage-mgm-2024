@@ -1,26 +1,13 @@
-## Aufgabe 1: Erstelle ein Objekt, das ein Schaf in Minecraft represäntieren könnte
-### Grundkonzept
-* In Python kann man sogenannte Objekte programmieren und Instanzen  dieser Objekte erstellen.
-* Objekte dienen der einfacheren und gesammelten Verarbeitung von Datengruppen wie z.B. der Adresse einer Person
-* Objekte bestehen aus Attributen und Methoden
-* Attribute speichern jeweils einen Wert. Es kann sich um Zahlenwerte, Text, oder Listen, Tupel und Dictonarys handeln. Auch Instanzen anderer Objekte können Attribute sein.
-*  Methoden operieren auf Instanzen eines Objektes. Sie funktionieren wie Funktionen, werden jedoch mit der Instanz und dem Punktoperator aufgerufen
-### Syntax
-```python
-class Adresse:
-    def __init__(self, name, hausnummer, strasse, ort, postleitzahl):
-        self.name = name
-        self.hausnr = hausnummer
-        self.strasse = strasse
-        self.ort = ort
-        self.plz = postleitzahl
-    def eine_Methode(self):
-        print(f"{self.name} wohnt in {self.ort} in der Straße {self.strasse} Hausnummer {self.hausnr}")
-```
-### Anforderungen an dein Schaf-Objekt
+# Aufgaben Kapitel 5: OOP
+## Aufgabe 1: Erstelle dein erstes Objekt.
+### Anforderungen an dein Objekt
+Dein Objekt soll Informationen zu einem Schaf in einem Open-World Game speichern.
 In deinem Schaf-Objekt soll es folgende Attribute geben:
-* Eine Position im dreidimensionalem Raum, also mit x-, y- und z-Richtung
-* Einen Bool, der speichert, ob das Schaf geschoren ist
-* Ein Attribut, dass die Farbe deines Schafes speichert
-## Aufgabe 2: Füge deinem Objekt Methoden hinzu
-Füge deinem Objekt eine Methode hinzu, die das Schaf scheert, und eine die die Farbe des Schafes ändert
+* Eine Position im dreidimensionalem Raum, in Form von drei Werten mit den Bezeichnungen `X`, `Y` und `Z`
+* Einen Bool mit der Bezeichnung `Geschoren`, der speichert, ob das Schaf geschoren ist
+* Ein Attribut mit der Bezeichnung `Farbe`, dass die Farbe deines Schafes speichert.
+
+Dein Schaf-Objekt soll folgende Methoden haben
+* Eine Methode mit dem Name `scheeren`, die das Schaf scheert
+* Eine zweite Methode mit dem Name `faerben`, um die Farbe des Schafes zu verändern
+## Aufgabe 2: 

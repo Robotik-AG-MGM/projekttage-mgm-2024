@@ -4,4 +4,8 @@ class Schaf:
         self.Y = y_position
         self.Z = z_position
         self.Farbe = farbe
-        self.geschoren = geschoren
+        self.Geschoren = geschoren
+    def scheeren(self):
+        self.geschoren = False
+    def faerben(self, farbe):
+        self.Farbe = farbe
