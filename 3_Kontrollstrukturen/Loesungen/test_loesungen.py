@@ -110,15 +110,12 @@ def test_aufgabe_8_exists():
     ), "File does not exist"
 
 
-def test_aufgabe_8_output():
-    assert l_aufgabe_8.zahl == 10, "Variable 'zahl' ist falsch"
-    output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_8.py"])
-    assert output == b"Die Zahl ist größer als 5\n", "Output is wrong"
-
-
 def test_aufgabe_8():
     assert l_aufgabe_8.zahl == 10, "Variable 'zahl' ist falsch"
-
+    output = subprocess.check_output(
+        ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_8.py"]
+    )
+    assert output == b"Die Zahl ist groeszer als 5\n", "Output is wrong"
 
 
 def test_aufgabe_9_exists():
@@ -127,10 +124,44 @@ def test_aufgabe_9_exists():
     ), "File does not exist"
 
 
+def test_aufgabe_9():
+    assert l_aufgabe_9.note == 85, "Variable 'note' ist falsch"
+    output = subprocess.check_output(
+        ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"]
+    )
+    assert output == b"Gut!\n", "Output is wrong"
+
+    # l_aufgabe_9.note = 100
+    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"])
+    # assert output == b"Sehr gut!\n", "Output is wrong"
+
+    # l_aufgabe_9.note = 75
+    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"])
+    # assert output == b"Befriedigend\n", "Output is wrong"
+
+    # l_aufgabe_9.note = 65
+    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"])
+    # assert output == b"Ausreichend\n", "Output is wrong"
+
+    # l_aufgabe_9.note = 55
+    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"])
+    # assert output == b"Durchgefallen\n", "Output is wrong"
+
+
 def test_aufgabe_10_exists():
     assert os.path.exists(
         "3_Kontrollstrukturen/Loesungen/l_aufgabe_10.py"
     ), "File does not exist"
+
+
+def test_aufgabe_10():
+    # l_aufgabe_10.text = "Beliebiger Text"
+    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_10.py"])
+    # assert output == b"Der Text enthaelt kein Python\n", "Output is wrong"
+    # l_aufgabe_10.text = "Beliebiger Python Text"
+    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_10.py"])
+    # assert output == b"Der Text enthaelt Python\n", "Output is wrong"
+    pass
 
 
 def test_aufgabe_11_exists():
@@ -139,10 +170,28 @@ def test_aufgabe_11_exists():
     ), "File does not exist"
 
 
+def test_aufgabe_11():
+    assert l_aufgabe_11.zahl == 15, "Variable 'zahl' ist falsch"
+    assert l_aufgabe_11.teiler == 3, "Variable 'teiler' ist falsch"
+    output = subprocess.check_output(
+        ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_11.py"]
+    )
+    assert output == b"Die Zahl ist durch 3 teilbar\n", "Output is wrong"
+
+    # l_aufgabe_11.zahl = 16
+    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_11.py"])
+    # assert output == b"Die Zahl ist nicht durch 3 teilbar\n", "Output is wrong"
+
+
 def test_aufgabe_12_exists():
     assert os.path.exists(
         "3_Kontrollstrukturen/Loesungen/l_aufgabe_12.py"
     ), "File does not exist"
+
+
+def test_aufgabe_12():
+    assert l_aufgabe_12.alter == 18, "Variable 'alter' ist falsch"
+    assert l_aufgabe_12.ausweis, "Variable 'ausweis' ist falsch"
 
 
 def test_aufgabe_13_exists():
@@ -151,16 +200,37 @@ def test_aufgabe_13_exists():
     ), "File does not exist"
 
 
+def test_aufgabe_13():
+    output = subprocess.check_output(
+        ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_13.py"]
+    )
+    assert output == b"1\n2\n3\n4\n5\n", "Output is wrong"
+
+
 def test_aufgabe_14_exists():
     assert os.path.exists(
         "3_Kontrollstrukturen/Loesungen/l_aufgabe_14.py"
     ), "File does not exist"
 
 
+def test_aufgabe_14():
+    output = subprocess.check_output(
+        ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_14.py"]
+    )
+    assert output == b"Apfel\nBanane\nOrange\nErdbeere\n", "Output is wrong"
+
+
 def test_aufgabe_15_exists():
     assert os.path.exists(
         "3_Kontrollstrukturen/Loesungen/l_aufgabe_15.py"
     ), "File does not exist"
+
+
+def test_aufgabe_15():
+    output = subprocess.check_output(
+        ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_15.py"]
+    )
+    assert output == b"2\n4\n6\n8\n10\n", "Output is wrong"
 
 
 def test_aufgabe_16_exists():
@@ -173,3 +243,11 @@ def test_aufgabe_17_exists():
     assert os.path.exists(
         "3_Kontrollstrukturen/Loesungen/l_aufgabe_17.py"
     ), "File does not exist"
+
+
+def test_aufgabe_17():
+    assert l_aufgabe_17.matrix == [[1, 2, 3], [4, 5, 6], [7, 8, 9]], "Variable 'matrix' ist falsch"
+    output = subprocess.check_output(
+        ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_17.py"]
+    )
+    assert output == b"1\n2\n3\n4\n5\n6\n7\n8\n9\n", "Output is wrong"

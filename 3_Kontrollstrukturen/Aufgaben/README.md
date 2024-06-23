@@ -55,13 +55,13 @@ Erstelle zu jeder Aufgabe eine eigene Pythondatei und benenne sie entsprechend i
 ### Aufgabe 8
 
 1. Erstelle eine Variable `zahl` und weise ihr den Wert `10` zu.
-2. Schreibe eine Bedingung, die überprüft, ob zahl größer als `5` ist. Wenn die Bedingung wahr ist, gib `"Die Zahl ist größer als 5"` aus, sonst gib `"Die Zahl ist nicht größer als 5"` aus.
+2. Schreibe eine Bedingung, die überprüft, ob zahl groeszer als `5` ist. Wenn die Bedingung wahr ist, gib `"Die Zahl ist groeszer als 5"` aus, sonst gib `"Die Zahl ist nicht groeszer als 5"` aus.
 
 ### Aufagbe 9
 
 1. Erstelle eine Variable `note` und weise ihr den Wert `85` zu (angenommen, dies ist eine Schülernote).
 2. Schreibe eine Bedingung, die folgende Ausgaben je nach der Note generiert:
-    - Wenn die Note größer oder gleich `90` ist, gib `"Sehr gut!"` aus.
+    - Wenn die Note groeszer oder gleich `90` ist, gib `"Sehr gut!"` aus.
     - Wenn die Note zwischen `80` und `89` liegt, gib `"Gut!"` aus.
     - Wenn die Note zwischen `70` und `79` liegt, gib `"Befriedigend"` aus.
     - Wenn die Note zwischen `60` und `69` liegt, gib `"Ausreichend"` aus.
@@ -70,7 +70,7 @@ Erstelle zu jeder Aufgabe eine eigene Pythondatei und benenne sie entsprechend i
 ### Aufgabe 10
 
 1. Erstelle eine Variable `text` und weise ihr einen beliebigen Text zu.
-2. Schreibe eine Bedingung, die überprüft, ob der Text `"Python"` enthält. Wenn ja, gib `"Der Text enthält Python"` aus, ansonsten gib `"Der Text enthält kein Python"` aus.
+2. Schreibe eine Bedingung, die überprüft, ob der Text `"Python"` enthaelt. Wenn ja, gib `"Der Text enthaelt Python"` aus, ansonsten gib `"Der Text enthaelt kein Python"` aus.
 
 ```python
 >>> "a" in "Hallo"
@@ -92,7 +92,7 @@ Um die Teilbarkeit zu testen, benutzen wir in Python den %. Dieser berechnet den
 1
 ```
 
-In diesem Beispiel gibt 10 % 3 den Wert 1 zurück, weil 10 durch 3 geteilt wird und der Rest 1 beträgt.
+In diesem Beispiel gibt 10 % 3 den Wert 1 zurück, weil 10 durch 3 geteilt wird und der Rest 1 betraegt.
 Hier sind einige weitere Beispiele:
 
 ```python
@@ -103,10 +103,10 @@ Hier sind einige weitere Beispiele:
 0
 ```
 
-- `15 % 7` gibt 1 zurück, weil 15 durch 7 geteilt wird und der Rest 1 beträgt.
+- `15 % 7` gibt 1 zurück, weil 15 durch 7 geteilt wird und der Rest 1 betraegt.
 - `20 % 4` gibt 0 zurück, weil 20 durch 4 geteilt wird und es keinen Rest gibt.
 
-Der Modulo-Operator ist besonders nützlich, wenn wir überprüfen möchten, ob eine Zahl gerade oder ungerade ist. Wenn eine Zahl modulo 2 gleich 0 ist, ist sie gerade, andernfalls ist sie ungerade.
+Der Modulo-Operator ist besonders nützlich, wenn wir überprüfen moechten, ob eine Zahl gerade oder ungerade ist. Wenn eine Zahl modulo 2 gleich 0 ist, ist sie gerade, andernfalls ist sie ungerade.
 
 ```python
 >>> 6 % 2
@@ -155,7 +155,7 @@ Um Zahlen in einer `for`-Schleife auszugeben, benutzen wir die `range(n)` Funkti
 ### Aufgabe 16
 
 1. Verwende eine `while`-Schleife, um Zufallszahlen zwischen 1 und 10 zu generieren, bis eine 7 erreicht wird.
-2. Gib die Anzahl der Versuche aus, die benötigt wurden, um die 7 zu erreichen.
+2. Gib die Anzahl der Versuche aus, die benoetigt wurden, um die 7 zu erreichen.
 
 #### Info
 Um Zufallszahlen zu erzeugen, müssen wir die Erweiterung `random` importieren. Das machen wir ganz am Anfang unseres Codes. Um nun eine Zufallszahl zu erzeugen benutzen wir die Funktion `random.randint(start, ende)`, die eine Zufallszahl erzeugt, die im Bereich zwischen Start und Ende, liegt (start und ende inbegriffen).
