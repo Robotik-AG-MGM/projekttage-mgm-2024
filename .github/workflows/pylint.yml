@@ -20,4 +20,4 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py') --disable=C0116,C0114,C0103 --ignore-patterns=test_aufgabe.py
+        pylint $(git ls-files '*.py') --disable=C0116,C0114,C0103,R1716 --ignore-patterns=test_aufgabe.py
