@@ -119,7 +119,7 @@ def test_aufgabe_9_exists():
     ), "File does not exist"
 
 
-def test_aufgabe_9(monkeypatch, capsys):
+def test_aufgabe_9():
     assert l_aufgabe_9.note == 85, "Variable 'note' ist falsch"
     output = subprocess.check_output(
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"]
@@ -211,7 +211,11 @@ def test_aufgabe_17_exists():
 
 
 def test_aufgabe_17():
-    assert l_aufgabe_17.matrix == [[1, 2, 3], [4, 5, 6], [7, 8, 9]], "Variable 'matrix' ist falsch"
+    assert l_aufgabe_17.matrix == [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ], "Variable 'matrix' ist falsch"
     output = subprocess.check_output(
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_17.py"]
     )
