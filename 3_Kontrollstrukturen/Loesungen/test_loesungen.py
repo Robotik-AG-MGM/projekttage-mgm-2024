@@ -9,13 +9,8 @@ import l_aufgabe_6
 import l_aufgabe_7
 import l_aufgabe_8
 import l_aufgabe_9
-import l_aufgabe_10
 import l_aufgabe_11
 import l_aufgabe_12
-import l_aufgabe_13
-import l_aufgabe_14
-import l_aufgabe_15
-import l_aufgabe_16
 import l_aufgabe_17
 
 
@@ -124,44 +119,18 @@ def test_aufgabe_9_exists():
     ), "File does not exist"
 
 
-def test_aufgabe_9():
+def test_aufgabe_9(monkeypatch, capsys):
     assert l_aufgabe_9.note == 85, "Variable 'note' ist falsch"
     output = subprocess.check_output(
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"]
     )
     assert output == b"Gut!\n", "Output is wrong"
 
-    # l_aufgabe_9.note = 100
-    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"])
-    # assert output == b"Sehr gut!\n", "Output is wrong"
-
-    # l_aufgabe_9.note = 75
-    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"])
-    # assert output == b"Befriedigend\n", "Output is wrong"
-
-    # l_aufgabe_9.note = 65
-    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"])
-    # assert output == b"Ausreichend\n", "Output is wrong"
-
-    # l_aufgabe_9.note = 55
-    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"])
-    # assert output == b"Durchgefallen\n", "Output is wrong"
-
 
 def test_aufgabe_10_exists():
     assert os.path.exists(
         "3_Kontrollstrukturen/Loesungen/l_aufgabe_10.py"
     ), "File does not exist"
-
-
-def test_aufgabe_10():
-    # l_aufgabe_10.text = "Beliebiger Text"
-    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_10.py"])
-    # assert output == b"Der Text enthaelt kein Python\n", "Output is wrong"
-    # l_aufgabe_10.text = "Beliebiger Python Text"
-    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_10.py"])
-    # assert output == b"Der Text enthaelt Python\n", "Output is wrong"
-    pass
 
 
 def test_aufgabe_11_exists():
@@ -177,10 +146,6 @@ def test_aufgabe_11():
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_11.py"]
     )
     assert output == b"Die Zahl ist durch 3 teilbar\n", "Output is wrong"
-
-    # l_aufgabe_11.zahl = 16
-    # output = subprocess.check_output(["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_11.py"])
-    # assert output == b"Die Zahl ist nicht durch 3 teilbar\n", "Output is wrong"
 
 
 def test_aufgabe_12_exists():
