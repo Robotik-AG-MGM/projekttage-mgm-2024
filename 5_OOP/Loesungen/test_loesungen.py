@@ -11,10 +11,12 @@ def test_aufgabe_1_exists():
         "5_OOP/Loesungen/V_aufgabe_1.py"
     ), "File does not exist"
 
+
 def test_aufgabe_2_exists():
     assert os.path.exists(
         "5_OOP/Loesungen/V_aufgabe_2.py"
     ), "File does not exist"
+
 
 def test_aufgabe_3_exists():
     assert os.path.exists(
@@ -22,9 +24,8 @@ def test_aufgabe_3_exists():
     ), "File does not exist"
 
 
-
 def test_aufgabe_2_output():
-    try:
+    try:    # Schueler-Objekt
         assert hasattr(V_aufgabe_2.Schueler, "Name") and hasattr(V_aufgabe_2.Schueler, "Noten"), "Attribute 'Name' und/oder 'Noten' nicht vorhanden, oder falsch geschrieben"
         assert hasattr(V_aufgabe_2.Schueler, "Note_erfahren") and callable(getattr(V_aufgabe_2.Schueler, "Note_erfahren")), "Methode 'Note_erfahren' existiert nicht oder ist falsch geschrieben"
         assert hasattr(V_aufgabe_2.Schueler, "Note_aendern") and callable(getattr(V_aufgabe_2.Schueler, "Note_aendern")), "Methode 'Note_aedern' existiert nicht oder ist falsch geschrieben"
@@ -37,10 +38,11 @@ def test_aufgabe_2_output():
         assert Test.Note_erfahren("Mathe") == 3, "'Note_aendern' oder 'Note_erfahren' funktioniert nicht richtig"
     except TypeError as e:
         if str(e).startswith("Schueler.__init__()"): assert False, "Kreator falsch definiert"
-        else: assert False, e
+        else: assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Schueler' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
-    try:
+    
+    try:    # Klasse-Objekt
         assert hasattr(V_aufgabe_2.Klasse, "ID") and hasattr(V_aufgabe_2.Klasse, "Schueler"), "Die Attribute 'ID' und/oder 'Schueler' existieren nicht oder sind falsch geschrieben"
         assert hasattr(V_aufgabe_2.Klasse, "Hinzufuegen") and callable(getattr(V_aufgabe_2.Klasse, "Hinzufuegen")), "Methode 'Hinzufuegen' existiert nicht oder ist falsch geschrieben"
         assert hasattr(V_aufgabe_2.Klasse, "Entfernen") and callable(getattr(V_aufgabe_2.Klasse, "Entfernen")), "Methode 'Entfernen' existiert nicht oder ist falsch geschrieben"
@@ -61,23 +63,43 @@ def test_aufgabe_2_output():
         assert Max.Name == "Max Mustermann" and Max.Note_erfahren("Deutsch") == 3, "Methode 'Enfernen hat einen falschen Schüler zurückgegeben'"
     except TypeError as e:
         if str(e).startswith("Klasse."): assert False, "Kreator falsch definiert"
-        else: assert False, e
+        else: assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Klasse' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
 
 
-# TODO
 def test_aufgabe_3_output():
-    if hasattr(V_aufgabe_3.Schaf, "X") and hasattr(V_aufgabe_3.Schaf, "Y") and hasattr(V_aufgabe_3.Schaf, "Z") and hasattr(V_aufgabe_3.Schaf, "X"):
-        print()
-    try:
-        Test = V_aufgabe_3.Schaf(0, 0, 0, "blau", False)
+    try:    #Objekt Position
+        assert hasattr(V_aufgabe_3.Position, "X") and hasattr(V_aufgabe_3.Position, "Y") and hasattr(V_aufgabe_3.Position, "Z"), "mindestens eines der Attribute 'X', 'Y' und 'Z' aus Position existiert nicht"
+        assert hasattr(V_aufgabe_3.Position, "__add__") and callable(getattr(V_aufgabe_3.Position, "__add__")), "Die Operatorüberladung für den Operator '+' in Position existiert nicht"
+        assert hasattr(V_aufgabe_3.Position, "__eq__") and hasattr(getattr(V_aufgabe_3.Position, "__eq__")), "Die Operatorüberladung für den Operator '==' in Position existiert nicht"
         
-        assert Test.X == 0 and Test.Y == 0 and Test.X == 0, "Error whilst controlling the coordinates"
-        assert Test.Farbe == "blau" and Test.Geschoren == False, "Error whilst controlling 'Farbe' and 'Geschoren' Attribut"
-        Test.faerben("rot")
-        Test.scheeren()
-        assert Test.Farbe == "rot" and Test.Geschoren == True, "At least one of the methods 'faerben' and 'scheeren' does not work"
+        Test_Position_1 = V_aufgabe_3.Position(1, 1, 1)
+        Test_Position_2 = V_aufgabe_3.Position(1, 1, 1)
+        assert Test_Position_1 == Test_Position_2, "Vergleichsoperator des Objektes Position funktiniert nicht richtig."
+        assert (Test_Position_1 + Test_Position_2) == V_aufgabe_3.Position(2, 2, 2), "Additionsoperator des Objektes Position funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Schaf.__init__()"):
-            assert False, "Die Funktion __init__ ist nicht richtig definiert."
+        if str(e).startswith("Position.__init__()"): assert False, "Kreator von Position falsch definiert"
+        else: assert False, str(e)
+    except:
+        assert False, "Irgendetwas anderes bei 'Position' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
+
+    try:    # Objekt Kreatur
+        assert hasattr(V_aufgabe_3.Kreatur, "Position"), "das Attribut 'Position' in Kreatur existiert nicht"
+        assert hasattr(V_aufgabe_3.Kreatur, "Bewegen") and callable(getattr(V_aufgabe_3.Kreatur, "Bewegen")), "die Methode 'Bewegen' in Kreatur existiert nicht"
+
+        Test_Kreatur = V_aufgabe_3.Kreatur(V_aufgabe_3.Position(1, 0, -1))
+        assert Test_Kreatur.Position == V_aufgabe_3.Position(1, 0, -1), "Position in Kreatur wurde falsch initialisiert"
+        Test_Kreatur.Bewegen(V_aufgabe_3.Position(5, 0, -5))
+        assert Test_Kreatur.Position == V_aufgabe_3.Position(5, 0, -5), "Methode 'Bewegen' von Kreatur funktioniert nicht"
+    except TypeError as e:
+        if str(e).startswith("Kreatur.__init__()"): assert False, "Kreator von Kreatur falsch definiert"
+        else: assert False, str(e)
+    except:
+        assert False, "Irgendetwas anderes bei 'Kreatur' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
+
+    try:    # Objekt Schaf: TODO
+        assert hasattr(V_aufgabe_3.Schaf, )
+    except TypeError as e:
+
+    except:

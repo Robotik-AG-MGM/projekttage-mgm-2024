@@ -37,22 +37,21 @@ Da sowohl die Kuh als auch das Schaf eine Position im Raum erhalten werdne, mach
 Überlade für das Objekt Position den Aditionsoperatur (+) und den Vergleichoperator (==). Hilfe findest du im Dokument README.md im Ordner 5_OOP.
 ### Aufgabe c: Das Objekt Kreatur
 Da Schaf und Kuh beides Kreaturen sind und deshalb gewisse Gemeinsamkeiten haben (z.B. haben beide eine Position), werden wir Sie beide von dem Objekt `Kreatur` erben lassen. Wenn du nicht weißt, was erben ist, dann lies im Dokument README.md im Ordner 5_OOP nach.
-Das Objekt `Kreatur` soll ein Attribut, nämlich die `Position` haben und eine Methode names `Bewegen`, die die Position der Kreatur auf die mitgegebene Position ändert.
-### Aufgabe c: Attribute des Schaf- und Kuh-Objektes
-Nun schreibst du die Schaf- und Kuh-Objekte. Stelle sicher, dass sie von `Kreatur` erben. Dies erreichst du folgendermaßen: `class Schaf(Kreatur):` sobald das getan ist kannst du die entsprechenden Kreatoren schreiben. Hier ist es besonders Wichtig, dass du die Eigenschaften des Objektes `Kreatur` auch tatsächlich erbst. Dies gelingt mit dem Aufruf des Kreator von `Kreatur` auf diese Art: `super().__init__(parameter1, parameter2)`. Da der Kreator von `Kreatur` nur eine Position nimmt, musst du ihm eine Position übergeben
+Das Objekt `Kreatur` soll ein Attribut, nämlich die `Position` haben und eine Methode names `Bewegen`, die die Position der Kreatur auf die mitgegebene Position ändert. Schreibe das `Kreatur`- Objekt
+### Aufgabe d: Attribute des Schaf- und Kuh-Objektes
+Nun schreibst du die Schaf- und Kuh-Objekte. Stelle sicher, dass sie von `Kreatur` erben. Dies erreichst du folgendermaßen: `class Schaf(Kreatur):` sobald das getan ist kannst du die entsprechenden Kreatoren schreiben. Hier ist es besonders wichtig, dass du die Eigenschaften des Objektes `Kreatur` auch tatsächlich erbst. Dies gelingt mit dem Aufruf des Kreator von `Kreatur` auf diese Art: `super().__init__(parameter1, parameter2)`. Da der Kreator von `Kreatur` nur eine Position nimmt, musst du ihm eine nur Position übergeben.
+Dein Kuh Objekt soll keine zusätzlichen Attribut ehaben.
 
-In deinem Schaf-Objekt soll es folgende Attribute geben:
+In deinem Schaf-Objekt soll es folgende zusätzliche Attribute geben:
 * Einen `bool` mit der Bezeichnung `Geschoren`, der speichert, ob das Schaf geschoren ist.
 * Ein Attribut vom typ `str` mit der Bezeichnung `Farbe`, das die Farbe deines Schafes speichert.
-In deinem Kuh-Objekt soll es folgende zusätzliche Attribute geben.
-### Aufgabe d: Methoden
-Dein Schaf-Objekt soll folgende Methoden haben
-* Eine Methode mit dem Name `scheeren`, die das Schaf scheert
-* Eine zweite Methode mit dem Name `faerben`, um die Farbe des Schafes zu verändern
-### Aufgabe e: Datenstrukturen in Objekten
-Wenn der Spieler das Schaf tötet, dann soll es immer `Fleisch` und mit einer Warscheinlichkeit von 50% `Wolle` fallen lassen.
-Schreibe eine Attribut vom Typ Dictonary mit der Bezeichnung `Ausbeute`, die zu den möglichen Items, die das Schaf fallen lässt die Warscheinlichkeiten als Zahl zwischen 0 und 1 speichert.
-### Aufgabe f: Methode mit Rückgabewert
-Ergänze dein Objekt um eine Methode `Warscheinlichkeit`, die die Warscheinlichkeit für ein Item, dass als Parameter mitgegeben wird zurückgibt.
-### Aufgabe g: Default-Werte im Kreator
-Da man meistens ein ungeschorenes Schaf erstellen möchte werden wir das Attribut `Geschoren` im Kreator mit dem Default-Parameter `False` belegen. Setze das für dein Schaf-Objekt um.
+Belege im Kreator des Schaf-Objektes das Attribut geschoren mit dem Default-Parameter `False`
+### Aufgabe e: Methoden
+Das Kuh-Objekt bekommt keine zusätzlichen Methoden
+Dein Schaf-Objekt soll folgende zusätzliche Methoden haben:
+* Eine Methode mit dem Name `Scheeren`, die das Schaf scheert
+* Eine zweite Methode mit dem Name `Faerben`, um die Farbe des Schafes zu verändern
+### Aufgabe f: Schafe und Kühe
+Erstelle nun ein Schaf-Objekt in deiner Lieblingsfarbe. Die Position kannst du dir ebenfalls aussuchen, lasse das Schaf aber ungeschoren. Gib nun die Farbe, Position und den geschoren-Zustand des Schafes aus. Rufe anschließend die Methoden `Faerben` und `Scheeren`, sowie `Bewegen` auf und Gib erneut Farbe, Position und den geschoren-Zustand aus.
+Mache dasselbe für eine Kuh.
+Gib zuletzt das Ergebnis des Vergleichs der Positioinen deiner Kuh und deines Schafes aus.
