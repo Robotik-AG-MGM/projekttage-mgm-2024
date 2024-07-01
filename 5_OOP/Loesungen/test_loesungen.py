@@ -1,8 +1,7 @@
+import os
 import V_aufgabe_1
 import V_aufgabe_2
 import V_aufgabe_3
-import os
-
 
 def test_aufgabe_1_exists(): # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
@@ -24,8 +23,8 @@ def test_aufgabe_3_exists(): # Funktionsfähigkeit durch Debug hergestellt.
 
 def test_aufgabe_1_output(): # Funktionsfähigkeit durch Debug hergestellt.
     try:
-        Test_Mensch = V_aufgabe_1.Mensch("Max", 20, 1.7, 70, "männlich", "gruen")
-        assert hasattr(Test_Mensch, "Name") and hasattr(Test_Mensch, "Alter") and hasattr(Test_Mensch, "Groesse") and hasattr(Test_Mensch, "Gewicht") and hasattr(Test_Mensch, "Geschlecht") and hasattr(Test_Mensch, "Augenfarbe"), "mindestend eines der Attribute 'Name','Alter','Groesse','Gewicht','Geschlecht' und 'Augenfarbe' existiert niht oder ist falsch geschrieben."
+        Test_Mensch = V_aufgabe_1.Mensch("Max", 20, 1.7, 70, "männlich")
+        assert hasattr(Test_Mensch, "Name") and hasattr(Test_Mensch, "Alter") and hasattr(Test_Mensch, "Groesse") and hasattr(Test_Mensch, "Gewicht") and hasattr(Test_Mensch, "Geschlecht"), "mindestend eines der Attribute 'Name','Alter','Groesse','Gewicht','Geschlecht' und 'Augenfarbe' existiert niht oder ist falsch geschrieben."
         assert hasattr(Test_Mensch, "BMI") and callable(getattr(Test_Mensch, "BMI")), "Methode 'BMI' existiert nicht oder ist falsch geschrieben"
 
         assert Test_Mensch.Name == "Max", "Attribut 'Name' wurde falsch initialisiert."
