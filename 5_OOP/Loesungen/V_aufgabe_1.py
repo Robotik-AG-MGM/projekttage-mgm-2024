@@ -8,7 +8,7 @@ class Mensch:
     def BMI(self) -> float:
         return self.Gewicht / (self.Groesse ** 2)
     
-Lux = Mensch("Luca", 17, 1.82, 75, "männlich", "braun")
+Lux = Mensch("Luca", 17, 1.82, 75, "männlich")
 print(f"{Lux.Name}'s Alter:        {Lux.Alter}")
 print(f"{Lux.Name}'s Größe:        {Lux.Groesse}")
 print(f"{Lux.Name}'s Gewicht:      {Lux.Gewicht}")
