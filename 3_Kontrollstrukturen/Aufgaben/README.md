@@ -145,7 +145,7 @@ Der Modulo-Operator ist besonders nützlich, wenn wir überprüfen moechten, ob 
 Um Zahlen in einer `for`-Schleife auszugeben, benutzen wir die `range(n)` Funktion. Sie gibt die Zahlen von `0` bis `n-1` aus
 
 ```python
->>> for x inn range(3):
+>>> for x in range(3):
 >>>     print(x)
 0
 1
