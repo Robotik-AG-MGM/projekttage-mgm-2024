@@ -1,5 +1,5 @@
 class Schueler:
-    def __init__(self, name: str, mathenote = None, deutschnote = None, physiknote = None, biologienote = None, englischnote = None):
+    def __init__(self, name: str, mathenote = 0, deutschnote = 0, physiknote = 0, biologienote = 0, englischnote = 0):
         self.Name = name
         self.Noten = {"Deutsch": deutschnote, "Mathe": mathenote, "Physik": physiknote, "Biologie": biologienote, "Englisch": englischnote}
     def Note_erfahren(self, fach: str) -> float:
@@ -20,7 +20,7 @@ class Klasse:
                 temp = schueler
                 self.Schueler.remove(schueler)
                 return temp
-    def Noten(self, name: str):
+    def Noten(self, name: str) -> dict:
         for schueler in self.Schueler:
             if schueler.Name == name: return schueler.Noten
     def Note_erfahren(self, name: str, fach: str):

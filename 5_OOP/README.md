@@ -87,4 +87,33 @@ Im folgenden findet sich eine Liste mit allen Operator-Funktionen
 * `__sub__(self, other)`: Diese Methode überlädt den Operator `-`.
 * `__truediv__(self, other)`: Diese Methode überlädt den Operator `/`.
 ### Erben
-In python kann man von anderen Klassen erben. Erben bedeutet, dass alle Attribute und Methoden des Objektes von dem man erbt auf das Objekt, das man erbt über. Wenn man z.B. ein Objekt `Haus-Tier` hat, dass die Attribute `Besitzer` und `Groeße` hat. Schreibt man nun ein
+**Syntax:**
+``` python
+class Haustier:
+    def __init__(self, besitzer: str, gewicht: int):
+        self.Besitzer = besitzer
+        self.Gewicht = gewicht
+    def gewicht(self):
+        print(self.Gewicht)
+        return self.Gewicht
+
+class Hamster(Haustier):
+    def __init__(self, besitzer: str, gewicht: int, niedlich: bool, nachtaktiv: bool):
+        self.Niedlich = niedlich
+        self.Nachtaktiv = nachtaktiv
+        super().__init__(besitzer, gewicht)
+    def ist_niedlich(self) -> bool:
+        return self.Niedlich
+
+Putzi = Hamster("Max", 50, True, True)
+print(Putzi.Besitzer)       # Ausgabe: Max
+print(Putzi.Gewicht)        # Ausgabe: 50
+Putzi.gewicht()             # Ausgabe: 50
+print(Putzi.Niedlich)       # Ausgabe: True
+print(Putzi.Nachtaktiv)     # Ausgabe: True
+print(Putzi.ist_niedlich)   # Ausgabe: True
+```
+In python kann man von anderen Objekten erben. Erben bedeutet, dass (alle) Attribute und Methoden des Objektes von dem man erbt auf das Objekt, das man erbt über. Wenn man z.B. ein Objekt `Haustier` hat, dass die Attribute `Besitzer` und `Gewicht` hat. Schreibt man nun ein Objekt `Hamster` und lässt es von Haustier erben, dann haben alle Instanzen von Hamster automatisch die Attribute `Besitzer` und `Gewicht`, ohne dass du diese im Kreator angeben musst. Du kannst nun in `Hamster` weitere Attribute und Methoden definieren, und so das Objekt `Hamster` erweitern, ohne dass du etwas an `Haustier` änderst. Das ist bsonders dann sinvoll, wenn man viele Objekte erstellen will, die sich nur minimal unterscheiden, aber einige gemeinsame Attribute und/oder Methoden haben.
+
+Im Code erbt man von einem anderen Objekt, indem man das Objekt, von dem man erbt in Klammern hinter dem Objektnnamen ergänzt. etwa so:
+`class Objekt(erbt_von_Objekt)`. Ganz Wichtig ist anschließend, dass man im Kreator der Klasse die erbt den Kreator des Objektes von dem man erbt auf etwas besondere Weise aufruft. nämlich so: `super().__init__(parameter1, parameter2, ...)`. Damit sagt man dem Computer, dass man alle Attribute und Methoden vom ErbObjekt erben möchte. Nun hat jede Instanz des Objektes Zugriff auf die Attribute und Methoden von dem Objekt, von dem man erbt.
