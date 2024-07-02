@@ -36,9 +36,10 @@ def test_aufgabe_1_output(): # Funktionsfähigkeit durch Debug hergestellt.
         Test_Mensch_BMI_2 = Test_Mensch.Gewicht / (Test_Mensch.Groesse ** 2)
         assert Test_Mensch_BMI_1 > (Test_Mensch_BMI_2 - 0.1) or Test_Mensch_BMI_1 < (Test_Mensch_BMI_2 + 0.1), "Methode 'BMI' funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Mensch.__init__()"): 
+        if str(e).startswith("Mensch.__init__()"):
             assert False, "Kreator falsch definiert"
-        else: assert False, str(e)
+        else:
+            assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Mensch' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
 
@@ -57,9 +58,9 @@ def test_aufgabe_2_output(): # Funktionsfähigkeit durch Debug hergestellt.
         Test_Schueler.Note_aendern("Mathe", 3)
         assert Test_Schueler.Note_erfahren("Mathe") == 3, "'Note_aendern' oder 'Note_erfahren' funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Schueler.__init__()"): 
+        if str(e).startswith("Schueler.__init__()"):
             assert False, "Kreator falsch definiert"
-        else: 
+        else:
             assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Schueler' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
@@ -85,9 +86,9 @@ def test_aufgabe_2_output(): # Funktionsfähigkeit durch Debug hergestellt.
         Max: V_aufgabe_2.Schueler = Test_Klasse.Entfernen("Max Mustermann")
         assert Max.Name == "Max Mustermann" and Max.Note_erfahren("Deutsch") == 3, "Methode 'Enfernen hat einen falschen Schüler zurückgegeben'"
     except TypeError as e:
-        if str(e).startswith("Klasse."): 
+        if str(e).startswith("Klasse."):
             assert False, "Kreator falsch definiert"
-        else: 
+        else:
             assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Klasse' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
@@ -104,9 +105,9 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
         assert Test_Position_1 == Test_Position_2, "Vergleichsoperator des Objektes Position funktiniert nicht richtig."
         assert (Test_Position_1 + Test_Position_2) == V_aufgabe_3.Position(2, 2, 2), "Additionsoperator des Objektes Position funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Position.__init__()"): 
+        if str(e).startswith("Position.__init__()"):
             assert False, "Kreator von Position falsch definiert"
-        else: 
+        else:
             assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Position' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
@@ -120,9 +121,9 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
         Test_Kreatur.Bewegen(V_aufgabe_3.Position(5, 0, -5))
         assert Test_Kreatur.Position == V_aufgabe_3.Position(5, 0, -5), "Methode 'Bewegen' von Kreatur funktioniert nicht"
     except TypeError as e:
-        if str(e).startswith("Kreatur.__init__()"): 
+        if str(e).startswith("Kreatur.__init__()"):
             assert False, "Kreator von Kreatur falsch definiert"
-        else: 
+        else:
             assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Kreatur' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
@@ -135,9 +136,9 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
         Test_Kuh.Bewegen(V_aufgabe_3.Position(-3, 0, -3))
         assert Test_Kuh.Position == V_aufgabe_3.Position(-3, 0, -3), "Methode 'Bewegen' in Kuh funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Schaf.__init__()"): 
+        if str(e).startswith("Schaf.__init__()"):
             assert False, "Kreator von Schaf falsch definiert"
-        else: 
+        else:
             assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
@@ -156,9 +157,9 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
         Test_Schaf.Scheeren()
         assert Test_Schaf.Farbe == "dunkelgruen" and Test_Schaf.Geschoren is True, "Methode 'Faerben' und oder 'Scheeren' in Schaf funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Schaf.__init__()"): 
+        if str(e).startswith("Schaf.__init__()"):
             assert False, "Kreator von Schaf falsch definiert"
-        else: 
+        else:
             assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"

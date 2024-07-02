@@ -32,7 +32,7 @@ class Klasse:
         return None
     def Noten(self, name: str) -> dict:
         for schueler in self.Schueler:
-            if schueler.Name == name: 
+            if schueler.Name == name:
                 return schueler.Noten
         return None
     def Note_erfahren(self, name: str, fach: str) -> float:
