@@ -1,15 +1,15 @@
 class Schueler:
-    def __init__(self, name: str, 
-                 mathenote = 0, 
-                 deutschnote = 0, 
-                 physiknote = 0, 
-                 biologienote = 0, 
+    def __init__(self, name: str,
+                 mathenote = 0,
+                 deutschnote = 0,
+                 physiknote = 0,
+                 biologienote = 0,
                  englischnote = 0):
         self.Name = name
-        self.Noten = {"Deutsch": deutschnote, 
-                      "Mathe": mathenote, 
-                      "Physik": physiknote, 
-                      "Biologie": biologienote, 
+        self.Noten = {"Deutsch": deutschnote,
+                      "Mathe": mathenote,
+                      "Physik": physiknote,
+                      "Biologie": biologienote,
                       "Englisch": englischnote}
     def Note_erfahren(self, fach: str) -> float:
         return self.Noten.get(fach)
@@ -18,7 +18,7 @@ class Schueler:
             self.Noten[fach] = wert
 
 class Klasse:
-    def __init__(self, klasse: str, schueler: list = list()):
+    def __init__(self, klasse: str, schueler: list = []):
         self.ID = klasse
         self.Schueler: list[Schueler] = schueler
     def Hinzufuegen(self, schueler: Schueler):
@@ -29,14 +29,17 @@ class Klasse:
                 temp = schueler
                 self.Schueler.remove(schueler)
                 return temp
+        return None
     def Noten(self, name: str) -> dict:
         for schueler in self.Schueler:
             if schueler.Name == name: 
                 return schueler.Noten
-    def Note_erfahren(self, name: str, fach: str):
+        return None
+    def Note_erfahren(self, name: str, fach: str) -> float:
         for schueler in self.Schueler:
-            if schueler.Name == name: 
+            if schueler.Name == name:
                 return schueler.Note_erfahren(fach)
+        return None
     def Note_aendern(self, name: str, fach: str, wert: float):
         for schueler in self.Schueler:
             if schueler.Name == name:

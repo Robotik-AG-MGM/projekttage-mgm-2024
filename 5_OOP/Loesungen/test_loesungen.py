@@ -36,7 +36,8 @@ def test_aufgabe_1_output(): # Funktionsfähigkeit durch Debug hergestellt.
         Test_Mensch_BMI_2 = Test_Mensch.Gewicht / (Test_Mensch.Groesse ** 2)
         assert Test_Mensch_BMI_1 > (Test_Mensch_BMI_2 - 0.1) or Test_Mensch_BMI_1 < (Test_Mensch_BMI_2 + 0.1), "Methode 'BMI' funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Mensch.__init__()"): assert False, "Kreator falsch definiert"
+        if str(e).startswith("Mensch.__init__()"): 
+            assert False, "Kreator falsch definiert"
         else: assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Mensch' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
@@ -49,18 +50,20 @@ def test_aufgabe_2_output(): # Funktionsfähigkeit durch Debug hergestellt.
         assert hasattr(Test_Schueler, "Name") and hasattr(Test_Schueler, "Noten"), "Attribute 'Name' und/oder 'Noten' nicht vorhanden, oder falsch geschrieben"
         assert hasattr(Test_Schueler, "Note_erfahren") and callable(getattr(Test_Schueler, "Note_erfahren")), "Methode 'Note_erfahren' existiert nicht oder ist falsch geschrieben"
         assert hasattr(Test_Schueler, "Note_aendern") and callable(getattr(Test_Schueler, "Note_aendern")), "Methode 'Note_aedern' existiert nicht oder ist falsch geschrieben"
-        
+
         assert Test_Schueler.Name == "Max Mustermann", "Name wurde falsch initialisiert"
         for temp in Test_Schueler.Noten.items():
             assert temp[1] == 0, "Noten wurden defaultmäßig nicht alle mit 0 initialisiert"
         Test_Schueler.Note_aendern("Mathe", 3)
         assert Test_Schueler.Note_erfahren("Mathe") == 3, "'Note_aendern' oder 'Note_erfahren' funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Schueler.__init__()"): assert False, "Kreator falsch definiert"
-        else: assert False, str(e)
+        if str(e).startswith("Schueler.__init__()"): 
+            assert False, "Kreator falsch definiert"
+        else: 
+            assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Schueler' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
-    
+
     try:    # Klasse-Objekt
         Test_Klasse = V_aufgabe_2.Klasse("2a")
 
@@ -82,8 +85,10 @@ def test_aufgabe_2_output(): # Funktionsfähigkeit durch Debug hergestellt.
         Max: V_aufgabe_2.Schueler = Test_Klasse.Entfernen("Max Mustermann")
         assert Max.Name == "Max Mustermann" and Max.Note_erfahren("Deutsch") == 3, "Methode 'Enfernen hat einen falschen Schüler zurückgegeben'"
     except TypeError as e:
-        if str(e).startswith("Klasse."): assert False, "Kreator falsch definiert"
-        else: assert False, str(e)
+        if str(e).startswith("Klasse."): 
+            assert False, "Kreator falsch definiert"
+        else: 
+            assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Klasse' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
 
@@ -94,13 +99,15 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
         assert hasattr(Test_Position_1, "X") and hasattr(Test_Position_1, "Y") and hasattr(Test_Position_1, "Z"), "mindestens eines der Attribute 'X', 'Y' und 'Z' aus Position existiert nicht oder ist falsch geschrieben (Die Buchstaben müssen groß geschrieben sein)"
         assert hasattr(Test_Position_1, "__add__") and callable(getattr(Test_Position_1, "__add__")), "Die Operatorüberladung für den Operator '+' in Position existiert nicht"
         assert hasattr(Test_Position_1, "__eq__") and hasattr(Test_Position_1, "__eq__"), "Die Operatorüberladung für den Operator '==' in Position existiert nicht"
-        
+
         Test_Position_2 = V_aufgabe_3.Position(1, 1, 1)
         assert Test_Position_1 == Test_Position_2, "Vergleichsoperator des Objektes Position funktiniert nicht richtig."
         assert (Test_Position_1 + Test_Position_2) == V_aufgabe_3.Position(2, 2, 2), "Additionsoperator des Objektes Position funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Position.__init__()"): assert False, "Kreator von Position falsch definiert"
-        else: assert False, str(e)
+        if str(e).startswith("Position.__init__()"): 
+            assert False, "Kreator von Position falsch definiert"
+        else: 
+            assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Position' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
 
@@ -113,21 +120,25 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
         Test_Kreatur.Bewegen(V_aufgabe_3.Position(5, 0, -5))
         assert Test_Kreatur.Position == V_aufgabe_3.Position(5, 0, -5), "Methode 'Bewegen' von Kreatur funktioniert nicht"
     except TypeError as e:
-        if str(e).startswith("Kreatur.__init__()"): assert False, "Kreator von Kreatur falsch definiert"
-        else: assert False, str(e)
+        if str(e).startswith("Kreatur.__init__()"): 
+            assert False, "Kreator von Kreatur falsch definiert"
+        else: 
+            assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Kreatur' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
 
     try:    # Objekt Kuh
         Test_Kuh = V_aufgabe_3.Kuh(V_aufgabe_3.Position(3, 0, 3))
         assert hasattr(Test_Kuh, "Position") and hasattr(Test_Kuh, "Bewegen") and callable(getattr(Test_Kuh, "Bewegen")), "Kuh erbt nicht von Kreatur, Attribut 'Position' und/oder Methode 'Bewegen' sind nicht vorhanden"
-        
+
         assert Test_Kuh.Position == V_aufgabe_3.Position(3, 0, 3), "Attribut 'Position' in Kuh wurde falsch initialisiert"
         Test_Kuh.Bewegen(V_aufgabe_3.Position(-3, 0, -3))
         assert Test_Kuh.Position == V_aufgabe_3.Position(-3, 0, -3), "Methode 'Bewegen' in Kuh funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Schaf.__init__()"): assert False, "Kreator von Schaf falsch definiert"
-        else: assert False, str(e)
+        if str(e).startswith("Schaf.__init__()"): 
+            assert False, "Kreator von Schaf falsch definiert"
+        else: 
+            assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
 
@@ -138,15 +149,17 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
 
         assert Test_Schaf.Farbe == "gruen", "Attribut 'Farbe' in Schaf wurde falsch initialisiert"
         assert Test_Schaf.Position == V_aufgabe_3.Position(-5, 0, 5), "Attribut 'Position' in Schaf wurde falsch initialisiert"
-        assert Test_Schaf.Geschoren == False, "Attribut 'Geschoren' in Schaf wurde falsch initialisiet, sollte per default False sein"
+        assert Test_Schaf.Geschoren is False, "Attribut 'Geschoren' in Schaf wurde falsch initialisiet, sollte per default False sein"
         Test_Schaf.Bewegen(V_aufgabe_3.Position(1, 0, -1))
         assert Test_Schaf.Position == V_aufgabe_3.Position(1, 0, -1), "Methode 'Bewegen' in Schaf funktioniert nicht richtig"
         Test_Schaf.Faerben("dunkelgruen")
         Test_Schaf.Scheeren()
-        assert Test_Schaf.Farbe == "dunkelgruen" and Test_Schaf.Geschoren == True, "Methode 'Faerben' und oder 'Scheeren' in Schaf funktioniert nicht richtig"
+        assert Test_Schaf.Farbe == "dunkelgruen" and Test_Schaf.Geschoren is True, "Methode 'Faerben' und oder 'Scheeren' in Schaf funktioniert nicht richtig"
     except TypeError as e:
-        if str(e).startswith("Schaf.__init__()"): assert False, "Kreator von Schaf falsch definiert"
-        else: assert False, str(e)
+        if str(e).startswith("Schaf.__init__()"): 
+            assert False, "Kreator von Schaf falsch definiert"
+        else: 
+            assert False, str(e)
     except:
         assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
 
