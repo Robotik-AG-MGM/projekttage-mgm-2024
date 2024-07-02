@@ -6,8 +6,9 @@ class Position:
     def __add__(self, value):
         return Position(self.X + value.X, self.Y + value.Y, self.Z + value.Z)
     def __eq__(self, value) -> bool:
-        if self.X == value.X and self.Y == value.Y and self.Z == value.Z: return True
-        else: return False
+        if self.X == value.X and self.Y == value.Y and self.Z == value.Z: 
+            return True
+        return False
 
 class Kreatur:
     def __init__(self, position: Position) -> None:

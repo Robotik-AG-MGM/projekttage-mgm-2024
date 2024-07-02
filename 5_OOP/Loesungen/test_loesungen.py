@@ -158,4 +158,4 @@ test_aufgabe_3_exists()
 
 test_aufgabe_1_output()
 test_aufgabe_2_output()
-test_aufgabe_3_output() 
+test_aufgabe_3_output()
