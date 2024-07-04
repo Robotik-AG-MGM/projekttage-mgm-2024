@@ -46,8 +46,8 @@ def test_aufgabe_1_output(): # Funktionsfähigkeit durch Debug hergestellt.
             assert False, "Kreator falsch definiert"
         else:
             assert False, str(e)
-    except:
-        assert False, "Irgendetwas anderes bei 'Mensch' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" # pylint: disable=C0301
+    except Error as e:
+        assert False, "Irgendetwas anderes bei 'Mensch' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
 
 def test_aufgabe_2_output(): # Funktionsfähigkeit durch Debug hergestellt.
@@ -71,8 +71,8 @@ def test_aufgabe_2_output(): # Funktionsfähigkeit durch Debug hergestellt.
             assert False, "Kreator falsch definiert"
         else:
             assert False, str(e)
-    except:
-        assert False, "Irgendetwas anderes bei 'Schueler' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" # pylint: disable=C0301
+    except Error as e:
+        assert False, "Irgendetwas anderes bei 'Schueler' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
     try:    # Klasse-Objekt
         Test_Klasse = V_aufgabe_2.Klasse("2a")
@@ -107,8 +107,8 @@ def test_aufgabe_2_output(): # Funktionsfähigkeit durch Debug hergestellt.
             assert False, "Kreator falsch definiert"
         else:
             assert False, str(e)
-    except:
-        assert False, "Irgendetwas anderes bei 'Klasse' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" # pylint: disable=C0301
+    except Error as e:
+        assert False, "Irgendetwas anderes bei 'Klasse' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
 
 def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
@@ -130,8 +130,8 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
             assert False, "Kreator von Position falsch definiert"
         else:
             assert False, str(e)
-    except:
-        assert False, "Irgendetwas anderes bei 'Position' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" # pylint: disable=C0301
+    except Error as e:
+        assert False, "Irgendetwas anderes bei 'Position' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
     try:    # Objekt Kreatur
         Test_Kreatur = V_aufgabe_3.Kreatur(V_aufgabe_3.Position(1, 0, -1))
@@ -147,8 +147,8 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
             assert False, "Kreator von Kreatur falsch definiert"
         else:
             assert False, str(e)
-    except:
-        assert False, "Irgendetwas anderes bei 'Kreatur' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" # pylint: disable=C0301
+    except Error as e:
+        assert False, "Irgendetwas anderes bei 'Kreatur' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
     try:    # Objekt Kuh
         Test_Kuh = V_aufgabe_3.Kuh(V_aufgabe_3.Position(3, 0, 3))
@@ -164,8 +164,8 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
             assert False, "Kreator von Schaf falsch definiert"
         else:
             assert False, str(e)
-    except:
-        assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" # pylint: disable=C0301
+    except Error as e:
+        assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
     try:    # Objekt Schaf:
         Test_Schaf = V_aufgabe_3.Schaf(V_aufgabe_3.Position(-5, 0, 5), "gruen")
@@ -189,15 +189,5 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
             assert False, "Kreator von Schaf falsch definiert"
         else:
             assert False, str(e)
-    except:
-        assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" # pylint: disable=C0301
-
-
-
-test_aufgabe_1_exists()
-test_aufgabe_2_exists()
-test_aufgabe_3_exists()
-
-test_aufgabe_1_output()
-test_aufgabe_2_output()
-test_aufgabe_3_output()
+    except Error as e:
+        assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
