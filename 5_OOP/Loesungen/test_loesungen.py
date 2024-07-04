@@ -4,25 +4,25 @@ import V_aufgabe_2
 import V_aufgabe_3
 
 
-def test_aufgabe_1_exists(): # Funktionsfähigkeit durch Debug hergestellt.
+def test_aufgabe_1_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
         "5_OOP/Loesungen/V_aufgabe_1.py"
     ), "File does not exist"
 
 
-def test_aufgabe_2_exists(): # Funktionsfähigkeit durch Debug hergestellt.
+def test_aufgabe_2_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
         "5_OOP/Loesungen/V_aufgabe_2.py"
     ), "File does not exist"
 
 
-def test_aufgabe_3_exists(): # Funktionsfähigkeit durch Debug hergestellt.
+def test_aufgabe_3_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
         "5_OOP/Loesungen/V_aufgabe_3.py"
     ), "File does not exist"
 
 
-def test_aufgabe_1_output(): # Funktionsfähigkeit durch Debug hergestellt.
+def test_aufgabe_1_output():  # Funktionsfähigkeit durch Debug hergestellt.
     try:
         Test_Mensch = V_aufgabe_1.Mensch("Max", 20, 1.7, 70, "männlich")
         assert (hasattr(Test_Mensch, "Name") and
@@ -51,7 +51,7 @@ def test_aufgabe_1_output(): # Funktionsfähigkeit durch Debug hergestellt.
         assert False, "Irgendetwas anderes bei 'Mensch' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
 
-def test_aufgabe_2_output(): # Funktionsfähigkeit durch Debug hergestellt.
+def test_aufgabe_2_output():  # Funktionsfähigkeit durch Debug hergestellt.
     try:    # Schueler-Objekt
         Test_Schueler = V_aufgabe_2.Schueler("Max Mustermann")
 
@@ -91,7 +91,7 @@ def test_aufgabe_2_output(): # Funktionsfähigkeit durch Debug hergestellt.
         assert (hasattr(Test_Klasse, "Note_aendern") and
                 callable(getattr(Test_Klasse, "Note_aendern"))), "Methode 'Note_aendern' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
 
-        assert Test_Klasse.ID =="2a", "ID wurde falsch initialisiert"
+        assert Test_Klasse.ID == "2a", "ID wurde falsch initialisiert"
         Test_Klasse.Hinzufuegen(V_aufgabe_2.Schueler("Max Mustermann"))
         assert (Test_Klasse.Schueler != [] and
                 Test_Klasse.Schueler[0].Name == "Max Mustermann"), "Methode 'Hinzufügen' hat nicht funktioniert" # pylint: disable=C0301
@@ -112,8 +112,8 @@ def test_aufgabe_2_output(): # Funktionsfähigkeit durch Debug hergestellt.
         assert False, "Irgendetwas anderes bei 'Klasse' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
 
-def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
-    try:    #Objekt Position
+def test_aufgabe_3_output():  # Funktionsfähigkeit durch Debug hergestellt.
+    try:    # Objekt Position
         Test_Position_1 = V_aufgabe_3.Position(1, 1, 1)
         assert (hasattr(Test_Position_1, "X") and
                 hasattr(Test_Position_1, "Y") and
