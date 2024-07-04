@@ -5,8 +5,10 @@ class Mensch:
         self.Groesse = groesse
         self.Gewicht = gewicht_in_kg
         self.Geschlecht = geschlecht
+
     def BMI(self) -> float:
         return self.Gewicht / (self.Groesse ** 2)
+
 
 Lux = Mensch("Luca", 17, 1.82, 75, "männlich")
 print(f"{Lux.Name}'s Alter:        {Lux.Alter}")

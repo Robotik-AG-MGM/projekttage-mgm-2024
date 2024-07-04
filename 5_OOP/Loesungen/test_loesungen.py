@@ -1,30 +1,30 @@
 import os
-import V_aufgabe_1
-import V_aufgabe_2
-import V_aufgabe_3
+import V_Aufgabe_1
+import V_Aufgabe_2
+import V_Aufgabe_3
 
 
 def test_aufgabe_1_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
-        "5_OOP/Loesungen/V_aufgabe_1.py"
+        "5_OOP/Loesungen/V_Aufgabe_1.py"
     ), "File does not exist"
 
 
 def test_aufgabe_2_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
-        "5_OOP/Loesungen/V_aufgabe_2.py"
+        "5_OOP/Loesungen/V_Aufgabe_2.py"
     ), "File does not exist"
 
 
 def test_aufgabe_3_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
-        "5_OOP/Loesungen/V_aufgabe_3.py"
+        "5_OOP/Loesungen/V_Aufgabe_3.py"
     ), "File does not exist"
 
 
 def test_aufgabe_1_output():  # Funktionsfähigkeit durch Debug hergestellt.
     try:
-        Test_Mensch = V_aufgabe_1.Mensch("Max", 20, 1.7, 70, "männlich")
+        Test_Mensch = V_Aufgabe_1.Mensch("Max", 20, 1.7, 70, "männlich")
         assert (hasattr(Test_Mensch, "Name") and
                 hasattr(Test_Mensch, "Alter") and
                 hasattr(Test_Mensch, "Groesse") and
@@ -53,7 +53,7 @@ def test_aufgabe_1_output():  # Funktionsfähigkeit durch Debug hergestellt.
 
 def test_aufgabe_2_output():  # Funktionsfähigkeit durch Debug hergestellt.
     try:    # Schueler-Objekt
-        Test_Schueler = V_aufgabe_2.Schueler("Max Mustermann")
+        Test_Schueler = V_Aufgabe_2.Schueler("Max Mustermann")
 
         assert (hasattr(Test_Schueler, "Name") and
                 hasattr(Test_Schueler, "Noten")), "Attribute 'Name' und/oder 'Noten' nicht vorhanden, oder falsch geschrieben" # pylint: disable=C0301
@@ -76,7 +76,7 @@ def test_aufgabe_2_output():  # Funktionsfähigkeit durch Debug hergestellt.
         assert False, "Irgendetwas anderes bei 'Schueler' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
     try:    # Klasse-Objekt
-        Test_Klasse = V_aufgabe_2.Klasse("2a")
+        Test_Klasse = V_Aufgabe_2.Klasse("2a")
 
         assert (hasattr(Test_Klasse, "ID") and
                 hasattr(Test_Klasse, "Schueler")), "Die Attribute 'ID' und/oder 'Schueler' existieren nicht oder sind falsch geschrieben" # pylint: disable=C0301
@@ -92,7 +92,7 @@ def test_aufgabe_2_output():  # Funktionsfähigkeit durch Debug hergestellt.
                 callable(getattr(Test_Klasse, "Note_aendern"))), "Methode 'Note_aendern' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
 
         assert Test_Klasse.ID == "2a", "ID wurde falsch initialisiert"
-        Test_Klasse.Hinzufuegen(V_aufgabe_2.Schueler("Max Mustermann"))
+        Test_Klasse.Hinzufuegen(V_Aufgabe_2.Schueler("Max Mustermann"))
         assert (Test_Klasse.Schueler != [] and
                 Test_Klasse.Schueler[0].Name == "Max Mustermann"), "Methode 'Hinzufügen' hat nicht funktioniert" # pylint: disable=C0301
         dic: dict = Test_Klasse.Noten("Max Mustermann")
@@ -100,7 +100,7 @@ def test_aufgabe_2_output():  # Funktionsfähigkeit durch Debug hergestellt.
             assert elem[1] == 0, "Noten eines Schülers in Klasse wurden defaultmäßig nicht mit 0 belegt, oder Methode 'Noten funktioniert nicht'" # pylint: disable=C0301
         Test_Klasse.Note_aendern("Max Mustermann", "Deutsch", 3)
         assert Test_Klasse.Note_erfahren("Max Mustermann", "Deutsch") == 3, "Methode 'Note_aendern' und/oder 'Note_erfahren' funktionieren nicht" # pylint: disable=C0301
-        Max: V_aufgabe_2.Schueler = Test_Klasse.Entfernen("Max Mustermann")
+        Max: V_Aufgabe_2.Schueler = Test_Klasse.Entfernen("Max Mustermann")
         assert (Max.Name == "Max Mustermann" and
                 Max.Note_erfahren("Deutsch") == 3), "Methode 'Enfernen hat einen falschen Schüler zurückgegeben'" # pylint: disable=C0301
     except TypeError as e:
@@ -114,7 +114,7 @@ def test_aufgabe_2_output():  # Funktionsfähigkeit durch Debug hergestellt.
 
 def test_aufgabe_3_output():  # Funktionsfähigkeit durch Debug hergestellt.
     try:    # Objekt Position
-        Test_Position_1 = V_aufgabe_3.Position(1, 1, 1)
+        Test_Position_1 = V_Aufgabe_3.Position(1, 1, 1)
         assert (hasattr(Test_Position_1, "X") and
                 hasattr(Test_Position_1, "Y") and
                 hasattr(Test_Position_1, "Z")), "mindestens eines der Attribute 'X', 'Y' und 'Z' aus Position existiert nicht oder ist falsch geschrieben (Die Buchstaben müssen groß geschrieben sein)" # pylint: disable=C0301
@@ -123,9 +123,9 @@ def test_aufgabe_3_output():  # Funktionsfähigkeit durch Debug hergestellt.
         assert (hasattr(Test_Position_1, "__eq__") and
                 hasattr(Test_Position_1, "__eq__")), "Die Operatorüberladung für den Operator '==' in Position existiert nicht" # pylint: disable=C0301
 
-        Test_Position_2 = V_aufgabe_3.Position(1, 1, 1)
+        Test_Position_2 = V_Aufgabe_3.Position(1, 1, 1)
         assert Test_Position_1 == Test_Position_2, "Vergleichsoperator des Objektes Position funktiniert nicht richtig." # pylint: disable=C0301
-        assert (Test_Position_1 + Test_Position_2) == V_aufgabe_3.Position(2, 2, 2), "Additionsoperator des Objektes Position funktioniert nicht richtig" # pylint: disable=C0301
+        assert (Test_Position_1 + Test_Position_2) == V_Aufgabe_3.Position(2, 2, 2), "Additionsoperator des Objektes Position funktioniert nicht richtig" # pylint: disable=C0301
     except TypeError as e:
         if str(e).startswith("Position.__init__()"):
             assert False, "Kreator von Position falsch definiert"
@@ -135,14 +135,14 @@ def test_aufgabe_3_output():  # Funktionsfähigkeit durch Debug hergestellt.
         assert False, "Irgendetwas anderes bei 'Position' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
     try:    # Objekt Kreatur
-        Test_Kreatur = V_aufgabe_3.Kreatur(V_aufgabe_3.Position(1, 0, -1))
+        Test_Kreatur = V_Aufgabe_3.Kreatur(V_Aufgabe_3.Position(1, 0, -1))
         assert hasattr(Test_Kreatur, "Position"), "das Attribut 'Position' in Kreatur existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
         assert (hasattr(Test_Kreatur, "Bewegen") and
                 callable(getattr(Test_Kreatur, "Bewegen"))), "die Methode 'Bewegen' in Kreatur existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
 
-        assert Test_Kreatur.Position == V_aufgabe_3.Position(1, 0, -1), "Position in Kreatur wurde falsch initialisiert" # pylint: disable=C0301
-        Test_Kreatur.Bewegen(V_aufgabe_3.Position(5, 0, -5))
-        assert Test_Kreatur.Position == V_aufgabe_3.Position(5, 0, -5), "Methode 'Bewegen' von Kreatur funktioniert nicht" # pylint: disable=C0301
+        assert Test_Kreatur.Position == V_Aufgabe_3.Position(1, 0, -1), "Position in Kreatur wurde falsch initialisiert" # pylint: disable=C0301
+        Test_Kreatur.Bewegen(V_Aufgabe_3.Position(5, 0, -5))
+        assert Test_Kreatur.Position == V_Aufgabe_3.Position(5, 0, -5), "Methode 'Bewegen' von Kreatur funktioniert nicht" # pylint: disable=C0301
     except TypeError as e:
         if str(e).startswith("Kreatur.__init__()"):
             assert False, "Kreator von Kreatur falsch definiert"
@@ -152,14 +152,14 @@ def test_aufgabe_3_output():  # Funktionsfähigkeit durch Debug hergestellt.
         assert False, "Irgendetwas anderes bei 'Kreatur' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
     try:    # Objekt Kuh
-        Test_Kuh = V_aufgabe_3.Kuh(V_aufgabe_3.Position(3, 0, 3))
+        Test_Kuh = V_Aufgabe_3.Kuh(V_Aufgabe_3.Position(3, 0, 3))
         assert (hasattr(Test_Kuh, "Position") and
                 hasattr(Test_Kuh, "Bewegen") and
                 callable(getattr(Test_Kuh, "Bewegen"))), "Kuh erbt nicht von Kreatur, Attribut 'Position' und/oder Methode 'Bewegen' sind nicht vorhanden" # pylint: disable=C0301
 
-        assert Test_Kuh.Position == V_aufgabe_3.Position(3, 0, 3), "Attribut 'Position' in Kuh wurde falsch initialisiert" # pylint: disable=C0301
-        Test_Kuh.Bewegen(V_aufgabe_3.Position(-3, 0, -3))
-        assert Test_Kuh.Position == V_aufgabe_3.Position(-3, 0, -3), "Methode 'Bewegen' in Kuh funktioniert nicht richtig" # pylint: disable=C0301
+        assert Test_Kuh.Position == V_Aufgabe_3.Position(3, 0, 3), "Attribut 'Position' in Kuh wurde falsch initialisiert" # pylint: disable=C0301
+        Test_Kuh.Bewegen(V_Aufgabe_3.Position(-3, 0, -3))
+        assert Test_Kuh.Position == V_Aufgabe_3.Position(-3, 0, -3), "Methode 'Bewegen' in Kuh funktioniert nicht richtig" # pylint: disable=C0301
     except TypeError as e:
         if str(e).startswith("Schaf.__init__()"):
             assert False, "Kreator von Schaf falsch definiert"
@@ -169,7 +169,7 @@ def test_aufgabe_3_output():  # Funktionsfähigkeit durch Debug hergestellt.
         assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
     try:    # Objekt Schaf:
-        Test_Schaf = V_aufgabe_3.Schaf(V_aufgabe_3.Position(-5, 0, 5), "gruen")
+        Test_Schaf = V_Aufgabe_3.Schaf(V_Aufgabe_3.Position(-5, 0, 5), "gruen")
         assert (hasattr(Test_Schaf, "Position") and
                 hasattr(Test_Schaf, "Bewegen") and
                 callable(getattr(Test_Schaf, "Bewegen"))), "Attribut 'Position' und/oder Methode 'Bewegen' in Schaf wurden nicht von Kreatur geerbt" # pylint: disable=C0301
@@ -177,10 +177,10 @@ def test_aufgabe_3_output():  # Funktionsfähigkeit durch Debug hergestellt.
                 hasattr(Test_Schaf, "Geschoren")), "Attribute 'Farbe' und/oder 'Geschoren' in Schaf existieren nicht oder sind falsch geschrieben" # pylint: disable=C0301
 
         assert Test_Schaf.Farbe == "gruen", "Attribut 'Farbe' in Schaf wurde falsch initialisiert"
-        assert Test_Schaf.Position == V_aufgabe_3.Position(-5, 0, 5), "Attribut 'Position' in Schaf wurde falsch initialisiert"  # pylint: disable=C0301
+        assert Test_Schaf.Position == V_Aufgabe_3.Position(-5, 0, 5), "Attribut 'Position' in Schaf wurde falsch initialisiert"  # pylint: disable=C0301
         assert Test_Schaf.Geschoren is False, "Attribut 'Geschoren' in Schaf wurde falsch initialisiet, sollte per default False sein" # pylint: disable=C0301
-        Test_Schaf.Bewegen(V_aufgabe_3.Position(1, 0, -1))
-        assert Test_Schaf.Position == V_aufgabe_3.Position(1, 0, -1), "Methode 'Bewegen' in Schaf funktioniert nicht richtig" # pylint: disable=C0301
+        Test_Schaf.Bewegen(V_Aufgabe_3.Position(1, 0, -1))
+        assert Test_Schaf.Position == V_Aufgabe_3.Position(1, 0, -1), "Methode 'Bewegen' in Schaf funktioniert nicht richtig" # pylint: disable=C0301
         Test_Schaf.Faerben("dunkelgruen")
         Test_Schaf.Scheeren()
         assert (Test_Schaf.Farbe == "dunkelgruen" and

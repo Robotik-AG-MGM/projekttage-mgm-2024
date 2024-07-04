@@ -6,19 +6,19 @@ import V_aufgabe_3
 
 def test_aufgabe_1_exists():
     assert os.path.exists(
-        "5_OOP/Loesungen/V_aufgabe_1.py"
+        "5_OOP/Aufgaben/V_aufgabe_1.py"
     ), "File does not exist"
 
 
 def test_aufgabe_2_exists():
     assert os.path.exists(
-        "5_OOP/Loesungen/V_aufgabe_2.py"
+        "5_OOP/Aufgaben/V_aufgabe_2.py"
     ), "File does not exist"
 
 
 def test_aufgabe_3_exists():
     assert os.path.exists(
-        "5_OOP/Loesungen/V_aufgabe_3.py"
+        "5_OOP/Aufgaben/V_aufgabe_3.py"
     ), "File does not exist"
 
 

@@ -1,28 +1,33 @@
 class Schueler:
     def __init__(self, name: str,
-                 mathenote = 0,
-                 deutschnote = 0,
-                 physiknote = 0,
-                 biologienote = 0,
-                 englischnote = 0):
+                 mathenote=0,
+                 deutschnote=0,
+                 physiknote=0,
+                 biologienote=0,
+                 englischnote=0):
         self.Name = name
         self.Noten = {"Deutsch": deutschnote,
                       "Mathe": mathenote,
                       "Physik": physiknote,
                       "Biologie": biologienote,
                       "Englisch": englischnote}
+
     def Note_erfahren(self, fach: str) -> float:
         return self.Noten.get(fach)
+
     def Note_aendern(self, fach: str, wert: float):
         if self.Noten.get(fach) is not None:
             self.Noten[fach] = wert
+
 
 class Klasse:
     def __init__(self, klasse: str, schueler: list = []):
         self.ID = klasse
         self.Schueler: list[Schueler] = schueler
+
     def Hinzufuegen(self, schueler: Schueler):
         self.Schueler.append(schueler)
+
     def Entfernen(self, name: str) -> Schueler:
         for schueler in self.Schueler:
             if schueler.Name == name:
@@ -30,16 +35,19 @@ class Klasse:
                 self.Schueler.remove(schueler)
                 return temp
         return None
+
     def Noten(self, name: str) -> dict:
         for schueler in self.Schueler:
             if schueler.Name == name:
                 return schueler.Noten
         return None
+
     def Note_erfahren(self, name: str, fach: str) -> float:
         for schueler in self.Schueler:
             if schueler.Name == name:
                 return schueler.Note_erfahren(fach)
         return None
+
     def Note_aendern(self, name: str, fach: str, wert: float):
         for schueler in self.Schueler:
             if schueler.Name == name:
