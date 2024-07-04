@@ -3,9 +3,9 @@ class Position:
         self.X = x_value
         self.Y = y_value
         self.Z = z_value
-    def __add__(self, value):
+    def __add__(self, value: 'Position'):
         return Position(self.X + value.X, self.Y + value.Y, self.Z + value.Z)
-    def __eq__(self, value) -> bool:
+    def __eq__(self, value: 'Position') -> bool:
         if self.X == value.X and self.Y == value.Y and self.Z == value.Z:
             return True
         return False
