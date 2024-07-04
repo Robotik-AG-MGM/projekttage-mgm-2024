@@ -29,7 +29,7 @@ def test_aufgabe_1_output(): # Funktionsfähigkeit durch Debug hergestellt.
                 hasattr(Test_Mensch, "Groesse") and
                 hasattr(Test_Mensch, "Gewicht") and
                 hasattr(Test_Mensch, "Geschlecht")), "mindestend eines der Attribute 'Name','Alter','Groesse','Gewicht','Geschlecht' und 'Augenfarbe' existiert niht oder ist falsch geschrieben." # pylint: disable=C0301
-        assert (hasattr(Test_Mensch, "BMI") and 
+        assert (hasattr(Test_Mensch, "BMI") and
                 callable(getattr(Test_Mensch, "BMI"))), "Methode 'BMI' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
 
         assert Test_Mensch.Name == "Max", "Attribut 'Name' wurde falsch initialisiert."
@@ -135,7 +135,7 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
 
     try:    # Objekt Kreatur
         Test_Kreatur = V_aufgabe_3.Kreatur(V_aufgabe_3.Position(1, 0, -1))
-        assert hasattr(Test_Kreatur, "Position"), "das Attribut 'Position' in Kreatur existiert nicht oder ist falsch geschrieben"
+        assert hasattr(Test_Kreatur, "Position"), "das Attribut 'Position' in Kreatur existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
         assert (hasattr(Test_Kreatur, "Bewegen") and
                 callable(getattr(Test_Kreatur, "Bewegen"))), "die Methode 'Bewegen' in Kreatur existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
 
@@ -183,7 +183,7 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
         Test_Schaf.Faerben("dunkelgruen")
         Test_Schaf.Scheeren()
         assert (Test_Schaf.Farbe == "dunkelgruen" and
-                Test_Schaf.Geschoren is True), "Methode 'Faerben' und oder 'Scheeren' in Schaf funktioniert nicht richtig"
+                Test_Schaf.Geschoren is True), "Methode 'Faerben' und oder 'Scheeren' in Schaf funktioniert nicht richtig" # pylint: disable=C0301
     except TypeError as e:
         if str(e).startswith("Schaf.__init__()"):
             assert False, "Kreator von Schaf falsch definiert"
