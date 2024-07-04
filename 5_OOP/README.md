@@ -67,12 +67,14 @@ Eines über Attribute solltet ihr noch wissen: Möchte man einem Attribut einen 
 
 **besondere Methoden:**
 Es gibt in python einige besondere Methoden, die bestimmte Zwecke erfüllen. Die `__init__()`-Methode gehört dazu.
-Darüber hinaus ist mit diesen besonderen Methoden eine Überladung von Operatoren möglich. Was heißt das: Im Normalfall können Ausdrücke wie `Objekt1 + Objekt2` oder `Objekt1 == Objekt2` nicht ausgeführt werden. Man kann jedoch durch überladen dieser Operatoren erreichen, dass oben stehende Ausdrücke ausgeführt werden können. Dazu müsst ihr zunächt einmal wissen, dass `Integer1 + Integer2` gleichbedeutend ist mit `Integer1.__add__(Integer2)` oder `__add__(Integer1, Integer2)`. Operatoren sind also nichts anderes als Funktionen, die die jeweiligen Zahlen als Parameter nehmen. Schreibt man nun eine Funktion, die genauso heißt wie eine andere, jedoch andere Parameter nimmt, so überlädt man die Funktion. Genau das kann man mit den Operatoren machen, sodass diese auch das von euch geschriebene Objekt als Parameter nehmen. Beispiel:
+Darüber hinaus ist mit diesen besonderen Methoden eine Überladung von Operatoren möglich. Was heißt das: Im Normalfall können Ausdrücke wie `Objekt1 + Objekt2` oder `Objekt1 == Objekt2` nicht ausgeführt werden. Man kann jedoch durch überladen dieser Operatoren erreichen, dass oben stehende Ausdrücke ausgeführt werden können. Dazu müsst ihr zunächt einmal wissen, dass `Integer1 + Integer2` gleichbedeutend ist mit `Integer1.__add__(Integer2)` oder `__add__(Integer1, Integer2)`. Operatoren sind also nichts anderes als Funktionen, die die jeweiligen Zahlen als Parameter nehmen. Schreibt man nun eine Funktion, die genauso heißt wie eine andere, jedoch andere Parameter nimmt, so überlädt man die Funktion. Genau das kann man mit den Operatoren machen, sodass diese auch das von euch geschriebene Objekt als Parameter nehmen. Wichtig ist hierbei, dass ihr die Angabe des Typs in der Methode mit diesem Symbol umrahmt: '
+
+Beispiel:
 ```python
 class Zahl:
     def __init__(self, zahl: int):
         self.Zahl = zahl
-    def __add__(self, other: Zahl) -> Zahl:
+    def __add__(self, other: 'Zahl') -> Zahl:
         return Zahl(self.Zahl + other.Zahl)
 ```
 Im folgenden findet sich eine Liste mit allen Operator-Funktionen
