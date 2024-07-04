@@ -162,7 +162,7 @@ def test_aufgabe_3_output(): # Funktionsfähigkeit durch Debug hergestellt.
         else:
             assert False, str(e)
     except:
-        assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter"
+        assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" # pylint: disable=C0301
 
 
 
