@@ -1,5 +1,6 @@
 class Schueler:
-    def __init__(self, name: str,
+    def __init__(self,
+                 name: str,
                  mathenote=0,
                  deutschnote=0,
                  physiknote=0,
@@ -20,9 +21,6 @@ class Schueler:
     def Note_aendern(self, fach: str, wert: float):
         if fach in self.Noten:
             self.Noten[fach] = wert
-        else:
-            # warum testest du ob das fach vorhanden ist?
-            pass
 
 
 class Klasse:
@@ -30,15 +28,15 @@ class Klasse:
         self.ID = klasse
         # typehints sind nicht verbindlich ind erzugen kein zwang
         # oder abgeändertes Verhalten
-        self.Schueler = schueler if type(schueler) is list else [schueler]
+        self.Schueler = schueler
 
     def Hinzufuegen(self, schueler: Schueler):
         self.Schueler.append(schueler)
 
     def Entfernen(self, name: str) -> Schueler:
-        for schueler in self.Schueler:
+        for index, schueler in enumerate(self.Schueler):
             if schueler.Name == name:
-                self.Schueler.remove(schueler)
+                del self.Schueler[index]
                 return schueler
         return None
 
