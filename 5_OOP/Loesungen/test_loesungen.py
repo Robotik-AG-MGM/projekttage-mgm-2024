@@ -115,6 +115,7 @@ def test_klasse_hinzufuegen():
 
 def test_klasse_entfernen():
     pass
+    pass
     klasse = V_Aufgabe_2.Klasse("10A")
     schueler1 = V_Aufgabe_2.Schueler("Max Mustermann")
     schueler2 = V_Aufgabe_2.Schueler("Erika Musterfrau")
