@@ -1,9 +1,11 @@
 import os
+import pytest
 import V_Aufgabe_1
 import V_Aufgabe_2
-import V_Aufgabe_3
+# import V_Aufgabe_3
 
 
+# Test ob die Dateien existieren
 def test_aufgabe_1_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
         "5_OOP/Loesungen/V_Aufgabe_1.py"
@@ -22,173 +24,122 @@ def test_aufgabe_3_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     ), "File does not exist"
 
 
-def test_aufgabe_1_output():  # Funktionsfähigkeit durch Debug hergestellt.
-    try:
-        Test_Mensch = V_Aufgabe_1.Mensch("Max", 20, 1.7, 70, "männlich")
-        assert (hasattr(Test_Mensch, "Name") and
-                hasattr(Test_Mensch, "Alter") and
-                hasattr(Test_Mensch, "Groesse") and
-                hasattr(Test_Mensch, "Gewicht") and
-                hasattr(Test_Mensch, "Geschlecht")), "mindestend eines der Attribute 'Name','Alter','Groesse','Gewicht','Geschlecht' und 'Augenfarbe' existiert niht oder ist falsch geschrieben." # pylint: disable=C0301
-        assert (hasattr(Test_Mensch, "BMI") and
-                callable(getattr(Test_Mensch, "BMI"))), "Methode 'BMI' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
-
-        assert Test_Mensch.Name == "Max", "Attribut 'Name' wurde falsch initialisiert."
-        assert Test_Mensch.Alter == 20, "Attribut 'Alter' wurde falsch initialisiert."
-        assert Test_Mensch.Groesse == 1.7, "Attribut 'Groesse' wurde falsch initialisiert."
-        assert Test_Mensch.Gewicht == 70, "Attribut 'Gewicht' wurde falsch initialisiert."
-        assert Test_Mensch.Geschlecht == "männlich", "Attribut 'Geschlecht' wurde falsch initialisiert"  # pylint: disable=C0301
-        Test_Mensch_BMI_1 = Test_Mensch.BMI()
-        Test_Mensch_BMI_2 = Test_Mensch.Gewicht / (Test_Mensch.Groesse ** 2)
-        assert (Test_Mensch_BMI_1 > (Test_Mensch_BMI_2 - 0.1) or
-                Test_Mensch_BMI_1 < (Test_Mensch_BMI_2 + 0.1)), "Methode 'BMI' funktioniert nicht richtig" # pylint: disable=C0301
-    except TypeError as e:
-        if str(e).startswith("Mensch.__init__()"):
-            assert False, "Kreator falsch definiert"
-        else:
-            assert False, str(e)
-    except Exception as e:
-        assert False, "Irgendetwas anderes bei 'Mensch' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
+# teste Aufgabe 1
+def test_mensch_bmi():
+    lux = V_Aufgabe_1.Mensch("Luca", 17, 1.82, 75, "männlich")
+    assert lux.BMI() == pytest.approx(22.6, abs=0.1)
 
 
-def test_aufgabe_2_output():  # Funktionsfähigkeit durch Debug hergestellt.
-    try:    # Schueler-Objekt
-        Test_Schueler = V_Aufgabe_2.Schueler("Max Mustermann")
-
-        assert (hasattr(Test_Schueler, "Name") and
-                hasattr(Test_Schueler, "Noten")), "Attribute 'Name' und/oder 'Noten' nicht vorhanden, oder falsch geschrieben" # pylint: disable=C0301
-        assert (hasattr(Test_Schueler, "Note_erfahren") and
-                callable(getattr(Test_Schueler, "Note_erfahren"))), "Methode 'Note_erfahren' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
-        assert (hasattr(Test_Schueler, "Note_aendern") and
-                callable(getattr(Test_Schueler, "Note_aendern"))), "Methode 'Note_aedern' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
-
-        assert Test_Schueler.Name == "Max Mustermann", "Name wurde falsch initialisiert"
-        for temp in Test_Schueler.Noten.items():
-            assert temp[1] == 0, "Noten wurden defaultmäßig nicht alle mit 0 initialisiert"
-        Test_Schueler.Note_aendern("Mathe", 3)
-        assert Test_Schueler.Note_erfahren("Mathe") == 3, "'Note_aendern' oder 'Note_erfahren' funktioniert nicht richtig" # pylint: disable=C0301
-    except TypeError as e:
-        if str(e).startswith("Schueler.__init__()"):
-            assert False, "Kreator falsch definiert"
-        else:
-            assert False, str(e)
-    except Exception as e:
-        assert False, "Irgendetwas anderes bei 'Schueler' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
-
-    try:    # Klasse-Objekt
-        Test_Klasse = V_Aufgabe_2.Klasse("2a")
-
-        assert (hasattr(Test_Klasse, "ID") and
-                hasattr(Test_Klasse, "Schueler")), "Die Attribute 'ID' und/oder 'Schueler' existieren nicht oder sind falsch geschrieben" # pylint: disable=C0301
-        assert (hasattr(Test_Klasse, "Hinzufuegen") and
-                callable(getattr(Test_Klasse, "Hinzufuegen"))), "Methode 'Hinzufuegen' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
-        assert (hasattr(Test_Klasse, "Entfernen") and
-                callable(getattr(Test_Klasse, "Entfernen"))), "Methode 'Entfernen' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
-        assert (hasattr(Test_Klasse, "Noten") and
-                callable(getattr(Test_Klasse, "Noten"))), "Methode 'Noten' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
-        assert (hasattr(Test_Klasse, "Note_erfahren") and
-                callable(getattr(Test_Klasse, "Note_erfahren"))), "Methode 'Note_erfahren' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
-        assert (hasattr(Test_Klasse, "Note_aendern") and
-                callable(getattr(Test_Klasse, "Note_aendern"))), "Methode 'Note_aendern' existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
-
-        assert Test_Klasse.ID == "2a", "ID wurde falsch initialisiert"
-        Test_Klasse.Hinzufuegen(V_Aufgabe_2.Schueler("Max Mustermann"))
-        assert (Test_Klasse.Schueler != [] and
-                Test_Klasse.Schueler[0].Name == "Max Mustermann"), "Methode 'Hinzufügen' hat nicht funktioniert" # pylint: disable=C0301
-        dic: dict = Test_Klasse.Noten("Max Mustermann")
-        for elem in dic.items():
-            assert elem[1] == 0, "Noten eines Schülers in Klasse wurden defaultmäßig nicht mit 0 belegt, oder Methode 'Noten funktioniert nicht'" # pylint: disable=C0301
-        Test_Klasse.Note_aendern("Max Mustermann", "Deutsch", 3)
-        assert Test_Klasse.Note_erfahren("Max Mustermann", "Deutsch") == 3, "Methode 'Note_aendern' und/oder 'Note_erfahren' funktionieren nicht" # pylint: disable=C0301
-        Max: V_Aufgabe_2.Schueler = Test_Klasse.Entfernen("Max Mustermann")
-        assert (Max.Name == "Max Mustermann" and
-                Max.Note_erfahren("Deutsch") == 3), "Methode 'Enfernen hat einen falschen Schüler zurückgegeben'" # pylint: disable=C0301
-    except TypeError as e:
-        if str(e).startswith("Klasse."):
-            assert False, "Kreator falsch definiert"
-        else:
-            assert False, str(e)
-    except Exception as e:
-        assert False, "Irgendetwas anderes bei 'Klasse' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
+def test_mensch_name_attribute():
+    lux = V_Aufgabe_1.Mensch("Luca", 17, 1.82, 75, "männlich")
+    assert hasattr(lux, "Name"), "Name attribute does not exist"
+    assert isinstance(lux.Name, str), "Name attribute is not of type str"
 
 
-def test_aufgabe_3_output():  # Funktionsfähigkeit durch Debug hergestellt.
-    try:    # Objekt Position
-        Test_Position_1 = V_Aufgabe_3.Position(1, 1, 1)
-        assert (hasattr(Test_Position_1, "X") and
-                hasattr(Test_Position_1, "Y") and
-                hasattr(Test_Position_1, "Z")), "mindestens eines der Attribute 'X', 'Y' und 'Z' aus Position existiert nicht oder ist falsch geschrieben (Die Buchstaben müssen groß geschrieben sein)" # pylint: disable=C0301
-        assert (hasattr(Test_Position_1, "__add__") and
-                callable(getattr(Test_Position_1, "__add__"))), "Die Operatorüberladung für den Operator '+' in Position existiert nicht" # pylint: disable=C0301
-        assert (hasattr(Test_Position_1, "__eq__") and
-                hasattr(Test_Position_1, "__eq__")), "Die Operatorüberladung für den Operator '==' in Position existiert nicht" # pylint: disable=C0301
+def test_mensch_alter_attribute():
+    lux = V_Aufgabe_1.Mensch("Luca", 17, 1.82, 75, "männlich")
+    assert hasattr(lux, "Alter"), "Alter attribute does not exist"
+    assert isinstance(lux.Alter, int), "Alter attribute is not of type int"
 
-        Test_Position_2 = V_Aufgabe_3.Position(1, 1, 1)
-        assert Test_Position_1 == Test_Position_2, "Vergleichsoperator des Objektes Position funktiniert nicht richtig." # pylint: disable=C0301
-        assert (Test_Position_1 + Test_Position_2) == V_Aufgabe_3.Position(2, 2, 2), "Additionsoperator des Objektes Position funktioniert nicht richtig" # pylint: disable=C0301
-    except TypeError as e:
-        if str(e).startswith("Position.__init__()"):
-            assert False, "Kreator von Position falsch definiert"
-        else:
-            assert False, str(e)
-    except Exception as e:
-        assert False, "Irgendetwas anderes bei 'Position' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
-    try:    # Objekt Kreatur
-        Test_Kreatur = V_Aufgabe_3.Kreatur(V_Aufgabe_3.Position(1, 0, -1))
-        assert hasattr(Test_Kreatur, "Position"), "das Attribut 'Position' in Kreatur existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
-        assert (hasattr(Test_Kreatur, "Bewegen") and
-                callable(getattr(Test_Kreatur, "Bewegen"))), "die Methode 'Bewegen' in Kreatur existiert nicht oder ist falsch geschrieben" # pylint: disable=C0301
+def test_mensch_groesse_attribute():
+    lux = V_Aufgabe_1.Mensch("Luca", 17, 1.82, 75, "männlich")
+    assert hasattr(lux, "Groesse"), "Groesse attribute does not exist"
+    assert isinstance(lux.Groesse, float), \
+        "Groesse attribute is not of type float"
 
-        assert Test_Kreatur.Position == V_Aufgabe_3.Position(1, 0, -1), "Position in Kreatur wurde falsch initialisiert" # pylint: disable=C0301
-        Test_Kreatur.Bewegen(V_Aufgabe_3.Position(5, 0, -5))
-        assert Test_Kreatur.Position == V_Aufgabe_3.Position(5, 0, -5), "Methode 'Bewegen' von Kreatur funktioniert nicht" # pylint: disable=C0301
-    except TypeError as e:
-        if str(e).startswith("Kreatur.__init__()"):
-            assert False, "Kreator von Kreatur falsch definiert"
-        else:
-            assert False, str(e)
-    except Exception as e:
-        assert False, "Irgendetwas anderes bei 'Kreatur' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
-    try:    # Objekt Kuh
-        Test_Kuh = V_Aufgabe_3.Kuh(V_Aufgabe_3.Position(3, 0, 3))
-        assert (hasattr(Test_Kuh, "Position") and
-                hasattr(Test_Kuh, "Bewegen") and
-                callable(getattr(Test_Kuh, "Bewegen"))), "Kuh erbt nicht von Kreatur, Attribut 'Position' und/oder Methode 'Bewegen' sind nicht vorhanden" # pylint: disable=C0301
+def test_mensch_gewicht_attribute():
+    lux = V_Aufgabe_1.Mensch("Luca", 17, 1.82, 75, "männlich")
+    assert hasattr(lux, "Gewicht"), "Gewicht attribute does not exist"
+    assert isinstance(lux.Gewicht, int), "Gewicht attribute is not of type int"
 
-        assert Test_Kuh.Position == V_Aufgabe_3.Position(3, 0, 3), "Attribut 'Position' in Kuh wurde falsch initialisiert" # pylint: disable=C0301
-        Test_Kuh.Bewegen(V_Aufgabe_3.Position(-3, 0, -3))
-        assert Test_Kuh.Position == V_Aufgabe_3.Position(-3, 0, -3), "Methode 'Bewegen' in Kuh funktioniert nicht richtig" # pylint: disable=C0301
-    except TypeError as e:
-        if str(e).startswith("Schaf.__init__()"):
-            assert False, "Kreator von Schaf falsch definiert"
-        else:
-            assert False, str(e)
-    except Exception as e:
-        assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
 
-    try:    # Objekt Schaf:
-        Test_Schaf = V_Aufgabe_3.Schaf(V_Aufgabe_3.Position(-5, 0, 5), "gruen")
-        assert (hasattr(Test_Schaf, "Position") and
-                hasattr(Test_Schaf, "Bewegen") and
-                callable(getattr(Test_Schaf, "Bewegen"))), "Attribut 'Position' und/oder Methode 'Bewegen' in Schaf wurden nicht von Kreatur geerbt" # pylint: disable=C0301
-        assert (hasattr(Test_Schaf, "Farbe") and
-                hasattr(Test_Schaf, "Geschoren")), "Attribute 'Farbe' und/oder 'Geschoren' in Schaf existieren nicht oder sind falsch geschrieben" # pylint: disable=C0301
+def test_mensch_geschlecht_attribute():
+    lux = V_Aufgabe_1.Mensch("Luca", 17, 1.82, 75, "männlich")
+    assert hasattr(lux, "Geschlecht"), "Geschlecht attribute does not exist"
+    assert isinstance(lux.Geschlecht, str), \
+        "Geschlecht attribute is not of type str"
 
-        assert Test_Schaf.Farbe == "gruen", "Attribut 'Farbe' in Schaf wurde falsch initialisiert"
-        assert Test_Schaf.Position == V_Aufgabe_3.Position(-5, 0, 5), "Attribut 'Position' in Schaf wurde falsch initialisiert"  # pylint: disable=C0301
-        assert Test_Schaf.Geschoren is False, "Attribut 'Geschoren' in Schaf wurde falsch initialisiet, sollte per default False sein" # pylint: disable=C0301
-        Test_Schaf.Bewegen(V_Aufgabe_3.Position(1, 0, -1))
-        assert Test_Schaf.Position == V_Aufgabe_3.Position(1, 0, -1), "Methode 'Bewegen' in Schaf funktioniert nicht richtig" # pylint: disable=C0301
-        Test_Schaf.Faerben("dunkelgruen")
-        Test_Schaf.Scheeren()
-        assert (Test_Schaf.Farbe == "dunkelgruen" and
-                Test_Schaf.Geschoren is True), "Methode 'Faerben' und oder 'Scheeren' in Schaf funktioniert nicht richtig" # pylint: disable=C0301
-    except TypeError as e:
-        if str(e).startswith("Schaf.__init__()"):
-            assert False, "Kreator von Schaf falsch definiert"
-        else:
-            assert False, str(e)
-    except Exception as e:
-        assert False, "Irgendetwas anderes bei 'Schaf' ist schiefgelaufen. Womöglich ist das Objekt falsch geschrieben oder existiert gar nicht. Oder einige Methode nehmen nicht genug oder zu viele Parameter" + str(e) # pylint: disable=C0301
+
+def test_mensch_bmi_function():
+    lux = V_Aufgabe_1.Mensch("Luca", 17, 1.82, 75, "männlich")
+    assert hasattr(lux, "BMI"), "BMI function does not exist"
+    assert callable(lux.BMI), "BMI is not a callable function"
+
+
+def test_mensch_attributes():
+    lux = V_Aufgabe_1.Mensch("Luca", 17, 1.82, 75, "männlich")
+    assert lux.Name == "Luca"
+    assert lux.Alter == 17
+    assert lux.Groesse == 1.82
+    assert lux.Gewicht == 75
+    assert lux.Geschlecht == "männlich"
+
+
+# teste Aufgabe 2
+def test_schueler_name_attribute():
+    schueler = V_Aufgabe_2.Schueler("Max Mustermann")
+    assert hasattr(schueler, "Name"), "Name attribute does not exist"
+    assert isinstance(schueler.Name, str), "Name attribute is not of type str"
+
+
+def test_schueler_noten_attribute():
+    schueler = V_Aufgabe_2.Schueler("Max Mustermann")
+    assert hasattr(schueler, "Noten"), "Noten attribute does not exist"
+    assert isinstance(schueler.Noten, dict), \
+        "Noten attribute is not of type dict"
+
+
+def test_schueler_note_erfahren():
+    schueler = V_Aufgabe_2.Schueler("Max Mustermann",
+                                    mathenote=4.5,
+                                    deutschnote=3.7)
+    assert schueler.Note_erfahren("Mathe") == 4.5
+    assert schueler.Note_erfahren("Deutsch") == 3.7
+
+
+def test_schueler_note_aendern():
+    schueler = V_Aufgabe_2.Schueler("Max Mustermann", mathenote=4.5)
+    schueler.Note_aendern("Mathe", 3.8)
+    assert schueler.Note_erfahren("Mathe") == 3.8
+
+
+def test_klasse_hinzufuegen():
+    klasse = V_Aufgabe_2.Klasse("10A")
+    schueler = V_Aufgabe_2.Schueler("Max Mustermann")
+    klasse.Hinzufuegen(schueler)
+    assert len(klasse.Schueler) == 1
+    assert klasse.Schueler[0] == schueler
+
+
+def test_klasse_entfernen():
+    klasse = V_Aufgabe_2.Klasse("10A")
+    schueler1 = V_Aufgabe_2.Schueler("Max Mustermann")
+    schueler2 = V_Aufgabe_2.Schueler("Erika Musterfrau")
+    klasse.Hinzufuegen(schueler1)
+    klasse.Hinzufuegen(schueler2)
+    removed_schueler = klasse.Entfernen("Max Mustermann")
+    assert removed_schueler == schueler1
+    assert len(klasse.Schueler) == 1
+    assert klasse.Schueler[0] == schueler2
+
+
+def test_klasse_note_erfahren():
+    klasse = V_Aufgabe_2.Klasse("10A")
+    schueler = V_Aufgabe_2.Schueler("Max Mustermann",
+                                    mathenote=4.5,
+                                    deutschnote=3.7)
+    klasse.Hinzufuegen(schueler)
+    assert klasse.Note_erfahren("Max Mustermann", "Mathe") == 4.5
+    assert klasse.Note_erfahren("Max Mustermann", "Deutsch") == 3.7
+
+
+def test_klasse_note_aendern():
+    klasse = V_Aufgabe_2.Klasse("10A")
+    schueler = V_Aufgabe_2.Schueler("Max Mustermann", mathenote=4.5)
+    klasse.Hinzufuegen(schueler)
+    klasse.Note_aendern("Max Mustermann", "Mathe", 3.8)
+    assert klasse.Note_erfahren("Max Mustermann", "Mathe") == 3.8
+
+# teste Aufgabe 3

@@ -13,17 +13,24 @@ class Schueler:
                       "Englisch": englischnote}
 
     def Note_erfahren(self, fach: str) -> float:
-        return self.Noten.get(fach)
+        # .get ist equvalent zu [fach],
+        # nur das es None zurückgibt wenn der Key nicht existiert
+        return self.Noten[fach]
 
     def Note_aendern(self, fach: str, wert: float):
-        if self.Noten.get(fach) is not None:
+        if fach in self.Noten:
             self.Noten[fach] = wert
+        else:
+            # warum testest du ob das fach vorhanden ist?
+            pass
 
 
 class Klasse:
     def __init__(self, klasse: str, schueler: list = []):
         self.ID = klasse
-        self.Schueler: list[Schueler] = schueler
+        # typehints sind nicht verbindlich ind erzugen kein zwang
+        # oder abgeändertes Verhalten
+        self.Schueler = schueler if type(schueler) is list else [schueler]
 
     def Hinzufuegen(self, schueler: Schueler):
         self.Schueler.append(schueler)
@@ -31,15 +38,8 @@ class Klasse:
     def Entfernen(self, name: str) -> Schueler:
         for schueler in self.Schueler:
             if schueler.Name == name:
-                temp = schueler
                 self.Schueler.remove(schueler)
-                return temp
-        return None
-
-    def Noten(self, name: str) -> dict:
-        for schueler in self.Schueler:
-            if schueler.Name == name:
-                return schueler.Noten
+                return schueler
         return None
 
     def Note_erfahren(self, name: str, fach: str) -> float:

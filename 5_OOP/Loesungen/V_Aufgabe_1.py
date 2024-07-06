@@ -1,5 +1,9 @@
 class Mensch:
-    def __init__(self, name: str, alter: int, groesse: float, gewicht_in_kg: int, geschlecht: str):
+    def __init__(self, name: str,
+                 alter: int,
+                 groesse: float,
+                 gewicht_in_kg: int,
+                 geschlecht: str):
         self.Name = name
         self.Alter = alter
         self.Groesse = groesse
@@ -10,9 +14,11 @@ class Mensch:
         return self.Gewicht / (self.Groesse ** 2)
 
 
-Lux = Mensch("Luca", 17, 1.82, 75, "männlich")
-print(f"{Lux.Name}'s Alter:        {Lux.Alter}")
-print(f"{Lux.Name}'s Größe:        {Lux.Groesse}")
-print(f"{Lux.Name}'s Gewicht:      {Lux.Gewicht}")
-print(f"{Lux.Name}'s Geschlecht:   {Lux.Geschlecht}")
-print(f"{Lux.Name}'s BMI:          {Lux.BMI()}")
+# verhindert beim Importieren, dass der Code ausgeführt wird
+if __name__ == "__main__":
+    Lux = Mensch("Luca", 17, 1.82, 75, "männlich")
+    print(f"{Lux.Name}'s Alter:        {Lux.Alter}")
+    print(f"{Lux.Name}'s Größe:        {Lux.Groesse}")
+    print(f"{Lux.Name}'s Gewicht:      {Lux.Gewicht}")
+    print(f"{Lux.Name}'s Geschlecht:   {Lux.Geschlecht}")
+    print(f"{Lux.Name}'s BMI:          {Lux.BMI()}")
