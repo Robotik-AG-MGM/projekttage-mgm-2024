@@ -2,20 +2,24 @@ import os
 import pytest
 import aufgabe_1
 import aufgabe_2
-import aufgabe_3 
+import aufgabe_3
+
 
 # fixtures
 @pytest.fixture(scope="function")
 def mensch():
     yield aufgabe_1.Mensch("Luca", 17, 1.82, 75, "männlich")
 
+
 @pytest.fixture(scope="function")
 def klasse():
     yield aufgabe_2.Klasse("10A")
 
+
 @pytest.fixture(scope="function")
 def schueler_a():
     yield aufgabe_2.Schueler("Max Mustermann")
+
 
 @pytest.fixture(scope="function")
 def schueler_b():
@@ -24,21 +28,15 @@ def schueler_b():
 
 # Test ob die Dateien existieren
 def test_aufgabe_1_exists():  # Funktionsfähigkeit durch Debug hergestellt.
-    assert os.path.exists(
-        "5_OOP/Aufgaben/aufgabe_1.py"
-    ), "File does not exist"
+    assert os.path.exists("5_OOP/Aufgaben/aufgabe_1.py"), "File does not exist"
 
 
 def test_aufgabe_2_exists():  # Funktionsfähigkeit durch Debug hergestellt.
-    assert os.path.exists(
-        "5_OOP/Aufgaben/aufgabe_2.py"
-    ), "File does not exist"
+    assert os.path.exists("5_OOP/Aufgaben/aufgabe_2.py"), "File does not exist"
 
 
 def test_aufgabe_3_exists():  # Funktionsfähigkeit durch Debug hergestellt.
-    assert os.path.exists(
-        "5_OOP/Aufgaben/aufgabe_3.py"
-    ), "File does not exist"
+    assert os.path.exists("5_OOP/Aufgaben/aufgabe_3.py"), "File does not exist"
 
 
 # teste Aufgabe 1
@@ -56,7 +54,8 @@ def test_mensch_name_attribute(mensch):
 def test_mensch_alter_attribute(mensch):
     lux = mensch
     assert hasattr(lux, "Alter"), "Alter attribute does not exist"
-    assert isinstance(lux.Alter, int), "Alter attribute is not of type int"
+    assert isinstance(lux.Alter, int), \
+        "Alter attribute is not of type int"
 
 
 def test_mensch_groesse_attribute(mensch):
@@ -110,8 +109,8 @@ def test_schueler_noten_attribute(schueler_a):
 
 def test_schueler_note_erfahren():
     schueler = aufgabe_2.Schueler("Max Mustermann",
-                                    mathenote=4.5,
-                                    deutschnote=3.7)
+                                  mathenote=4.5,
+                                  deutschnote=3.7)
     assert schueler.Note_erfahren("Mathe") == 4.5
     assert schueler.Note_erfahren("Deutsch") == 3.7
 
@@ -160,12 +159,14 @@ def test_klasse_note_aendern(klasse, schueler_a):
     k.Note_aendern("Max Mustermann", "Mathe", 3.8)
     assert k.Note_erfahren("Max Mustermann", "Mathe") == 3.8
 
+
 # teste Aufgabe 3
 def test_position_initialization():
     pos = aufgabe_3.Position(1, 2, 3)
     assert pos.X == 1
     assert pos.Y == 2
     assert pos.Z == 3
+
 
 def test_position_addition():
     pos1 = aufgabe_3.Position(1, 2, 3)
@@ -175,6 +176,7 @@ def test_position_addition():
     assert result.Y == 7
     assert result.Z == 9
 
+
 def test_position_equality():
     pos1 = aufgabe_3.Position(1, 2, 3)
     pos2 = aufgabe_3.Position(1, 2, 3)
@@ -182,10 +184,12 @@ def test_position_equality():
     assert pos1 == pos2
     assert not pos1 == pos3
 
+
 def test_kreatur_initialization():
     pos = aufgabe_3.Position(1, 2, 3)
     kreatur = aufgabe_3.Kreatur(pos)
     assert kreatur.Position == pos
+
 
 def test_kreatur_movement():
     pos1 = aufgabe_3.Position(1, 2, 3)
@@ -194,11 +198,15 @@ def test_kreatur_movement():
     kreatur.Bewegen(pos2)
     assert kreatur.Position == pos2
 
+
 def test_schaf_position_attribute():
     pos = aufgabe_3.Position(1, 2, 3)
     schaf = aufgabe_3.Schaf(pos)
     assert hasattr(schaf, "Position"), "Position attribute does not exist"
-    assert isinstance(schaf.Position, aufgabe_3.Position), "Position attribute is not of type Position"
+    assert isinstance(
+        schaf.Position, aufgabe_3.Position
+    ), "Position attribute is not of type Position"
+
 
 def test_schaf_farbe_attribute():
     pos = aufgabe_3.Position(1, 2, 3)
@@ -206,11 +214,14 @@ def test_schaf_farbe_attribute():
     assert hasattr(schaf, "Farbe"), "Farbe attribute does not exist"
     assert isinstance(schaf.Farbe, str), "Farbe attribute is not of type str"
 
+
 def test_schaf_geschoren_attribute():
     pos = aufgabe_3.Position(1, 2, 3)
     schaf = aufgabe_3.Schaf(pos, "gruen")
     assert hasattr(schaf, "Geschoren"), "Geschoren attribute does not exist"
-    assert isinstance(schaf.Geschoren, bool), "Geschoren attribute is not of type bool"
+    assert isinstance(schaf.Geschoren, bool), \
+        "Geschoren attribute is not of type bool"
+
 
 def test_schaf_scheeren():
     pos = aufgabe_3.Position(1, 2, 3)
@@ -219,12 +230,15 @@ def test_schaf_scheeren():
     schaf.Scheeren()
     assert schaf.Geschoren, "Schaf should be geschoren after calling Scheeren"
 
+
 def test_schaf_faerben():
     pos = aufgabe_3.Position(1, 2, 3)
     schaf = aufgabe_3.Schaf(pos, "gruen")
     assert schaf.Farbe == "gruen", "Schaf's initial Farbe should be 'gruen'"
     schaf.Faerben("blau")
-    assert schaf.Farbe == "blau", "Schaf's Farbe should be 'blau' after calling Faerben"
+    assert schaf.Farbe == "blau", \
+        "Schaf's Farbe should be 'blau' after calling Faerben"
+
 
 def test_schaf_bewegen():
     pos1 = aufgabe_3.Position(1, 2, 3)
@@ -232,30 +246,43 @@ def test_schaf_bewegen():
     schaf = aufgabe_3.Schaf(pos1, "gruen")
     assert schaf.Position == pos1, "Schaf's initial Position should be pos1"
     schaf.Bewegen(pos2)
-    assert schaf.Position == pos2, "Schaf's Position should be pos2 after calling Bewegen"
+    assert (
+        schaf.Position == pos2
+    ), "Schaf's Position should be pos2 after calling Bewegen"
+
 
 def test_kuh_position_attribute():
     pos = aufgabe_3.Position(1, 2, 3)
     kuh = aufgabe_3.Kuh(pos)
     assert hasattr(kuh, "Position"), "Position attribute does not exist"
-    assert isinstance(kuh.Position, aufgabe_3.Position), "Position attribute is not of type Position"
+    assert isinstance(
+        kuh.Position, aufgabe_3.Position
+    ), "Position attribute is not of type Position"
+
 
 def test_kuh_gemolken_attribute():
     pos = aufgabe_3.Position(1, 2, 3)
     kuh = aufgabe_3.Kuh(pos)
     assert hasattr(kuh, "Gemolken"), "Gemolken attribute does not exist"
-    assert isinstance(kuh.Gemolken, bool), "gemolken attribute is not of type bool"
+    assert isinstance(kuh.Gemolken, bool), \
+        "gemolken attribute is not of type bool"
+
 
 def test_kuh_movement():
     pos1 = aufgabe_3.Position(1, 2, 3)
     pos2 = aufgabe_3.Position(4, 5, 6)
     kuh = aufgabe_3.Kuh(pos1)
     kuh.Bewegen(pos2)
-    assert kuh.Position == pos2, "Kuh's Position should be pos2 after calling Bewegen"
+    assert kuh.Position == pos2, \
+        "Kuh's Position should be pos2 after calling Bewegen"
+
 
 def test_kuh_melken():
     pos = aufgabe_3.Position(-1, -2, -3)
     kuh = aufgabe_3.Kuh(pos)
-    assert kuh.Gemolken == False, "Kuh's initial Gemolken-attribute should be False"
+    assert kuh.Gemolken is False, \
+        "Kuh's initial Gemolken-attribute should be False"
     kuh.Melken()
-    assert kuh.Gemolken == True, "Kuh's Gemolken-attribute should be True after calling Melken"
+    assert (
+        kuh.Gemolken is True
+    ), "Kuh's Gemolken-attribute should be True after calling Melken"

@@ -3,16 +3,19 @@ import subprocess
 
 
 def test_aufgabe_1_exists():
-    assert os.path.exists("1_Einfuehrung/Aufgaben/aufgabe_1.py"), "File does not exist"
+    assert os.path.exists("1_Einfuehrung/Aufgaben/aufgabe_1.py"), \
+        "File does not exist"
 
 
 def test_aufgabe_2_exists():
-    assert os.path.exists("1_Einfuehrung/Aufgaben/aufgabe_2.py"), "File does not exist"
+    assert os.path.exists("1_Einfuehrung/Aufgaben/aufgabe_2.py"), \
+        "File does not exist"
 
 
 def test_aufgabe_1_output():
     output = (
-        subprocess.check_output(["python", "1_Einfuehrung/Aufgaben/aufgabe_1.py"])
+        subprocess.check_output(["python",
+                                 "1_Einfuehrung/Aufgaben/aufgabe_1.py"])
         .decode("utf-8")
         .strip()
     )
@@ -21,8 +24,10 @@ def test_aufgabe_1_output():
 
 def test_aufgabe_2_output():
     output = (
-        subprocess.check_output(["python", "1_Einfuehrung/Aufgaben/aufgabe_2.py"])
+        subprocess.check_output(["python",
+                                 "1_Einfuehrung/Aufgaben/aufgabe_2.py"])
         .decode("utf-8")
         .strip()
     )
-    assert output == "Name: Max , Alter: 20", "Output is not 'Name: Max , Alter: 20'"
+    assert output == "Name: Max , Alter: 20", \
+        "Output is not 'Name: Max , Alter: 20'"

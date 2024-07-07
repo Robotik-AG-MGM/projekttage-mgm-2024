@@ -9,7 +9,12 @@
                 "ms-toolsai.jupyter",
                 "ms-python.flake8",
                 "njpwerner.autodocstring",
-                "github.classroom"
+                "github.classroom",
+                "ms-python.pylint",
+                "DavidAnson.vscode-markdownlint",
+                "ms-python.debugpy",
+                "ms-python.vscode-pylance",
+                "ms-python.black-formatter"
             ]
         }
     }
