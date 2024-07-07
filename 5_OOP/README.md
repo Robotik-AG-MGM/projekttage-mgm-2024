@@ -59,8 +59,6 @@ if max_mustermann == felix_mustermann:      # Operator-Überladung angewandt
 else: 
     print("Die Adressen von Max und Felix sind nicht identisch")
 ```
-### Attribute
-Eines über Attribute solltet ihr noch wissen: Möchte man einem Attribut einen Typ zuweisen, so kann man das folgendermaßen: `self.[Attribut]: int = value`. Das Attribut hat jetzt also den Typ int. ähnlich funktioniert es mit Listen, jedoch muss man manchmal festlegen, welchen Typ die Objekte in einer Liste haben, um entsprechende Methoden aufrufen zu können. Auf das Attribut `self.List = []`, in das sspäter Adressen kommen sollen wäre es z.B. nicht möglich self.List.Name aufzurufen, weil der Computer nicht weiiß, dass es eine Liste mit Adressen ist. Dies lässt sich ändern, indem man schreibt `self.List: list[Adresse] = []`. So weiß der Computer, dass es sich um eine Liste mit Adressen handelt.
 ### Methoden
 **Default-Parameter:** Wenn man einer Funktion oder Methode sehr häufig denselben Wert als Parameter gibt, z.B. Wenn man nur Adressen aus demselben Ort sammelt, dann kann man den Parameter bei Funktions- bzw. Methodendefinition mit einem Default-Parameter belegen. Das sieht dann so aus:
 `def Funktion(parameter1, parameter2 = False)`. Beim Aufruf der Funktion bzw. der Methode muss man für parameter2 nun keinen Wert mehr übergeben, kann es jedoch tun: beispeilsweise wäre dieser dieser Aufruf `Funktion(7)` gleichbedeutend mit diesem `Funktion(7, False)`

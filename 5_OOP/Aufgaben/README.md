@@ -30,14 +30,11 @@ Setze folgende Methode für das Schüler-Objekt um
 * `Note_aendern`: Diese Methode nimmt ein Fach und einen Wert. Sie setzt die Note des Schülers in diesem Fach auf den Wert.
 ### Aufgabe d: Das Klassen-Objekt
 Erstelle nun ein neues Objekt names `Klasse`, dass eine Liste aus Schülern (`Schueler`) und einen Klassen-`ID` als Attribute hat. (Klassen-ID soll speichern, dass es sich z.B. um die 9e handelt). Der Kreator soll dabei eine Klassen-ID und eine Liste mit Schülern, die mit dem Default-Wert für eine leere Liste belegt ist, als Parameter nehmen. 
-### Aufgabe e: Attribute genauer definieren:
-Sorge dafür, dass der Computer weiß, dass es sich bei `Schueler` um eine Liste mit Schülern handelt. Dies gelingt dir, indem du hinter `self.Schueler` folgendes schreibst: `: list[Schueler]`. Dadurch legst du fest, dass Schueler eine Liste aus Schülern ist.
-### Aufgabe f: Methoden des Klassen-Objekts:
+### Aufgabe e: Methoden des Klassen-Objekts:
 Ergänze dein Objekt um folgende Methoden:
 * `Hinzufuegen`. Diese Methode nimmt einen Schüler als Parameter und fügt diesen der Klasse hinzu
 * `Entfernen`. Diese Methode nimmt einen Namen als Parameter und entfernt den Schüler mit dem angegebenen Name aus der Liste der Schüler. Außerdem soll die Methode den Schüler, der entfernt wurde zurückgeben. **Tipp:** Du kannst den Schüler zwischenspeichern bevor du ihn aus der Liste löschst und den zwischengespeicherten Wert zurückgeben.
-* `Noten`. Diese Methode nimmt ebenfalls einen Namen als Parameter und gibt die Dictonary mit den Noten des angegebenen Schülers zurück.
-* `Note_erfahren`. Diese Methode nimmt erneut einen Namen als Parameter, nimmt jedoch zusätzlich ein Faach und gibt die Note in dem Fach zurück. **Tipp:** Du kannst die Methoden, die du für das Schüler-Objekt geschrieben hast hier verwenden.
+* `Note_erfahren`. Diese Methode nimmt erneut einen Namen als Parameter, nimmt jedoch zusätzlich ein Fach und gibt die Note in dem Fach zurück. **Tipp:** Du kannst die Methoden, die du für das Schüler-Objekt geschrieben hast hier verwenden.
 * `Note_aendern`. Diese Methode nimmt erneut einen Name ind ein Fach, jedoch auch eine Note (einen float) als Parameter. Sie ändert die Note des angegebenen Schülers auf den angegebenen Wert. **Tipp:** Du kannst die Methoden, die du für das Schüler-Objekt geschrieben hast hier verwenden.
 ## Aufgabenblock 3: Erstelle ein Schaf- und Kuh-Objekt
 **Ziel:** Die Objekte, die du erstellst sollen ein Schaf und eine Kuh in einem Open World Game repräsentieren. Dazu erhalten das Schaf und die Kuh eine Position im Raum, und einige Methoden, die die Interaktion mit dem Objekt erleichtern. Außerdem wird es ein Objekt geben, dass die Arbeit mit Kuh und Schaf vereinfacht
