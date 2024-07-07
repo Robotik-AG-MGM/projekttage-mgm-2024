@@ -126,8 +126,8 @@ def test_klasse_hinzufuegen(klasse, schueler_a):
     k = klasse
     schueler = schueler_a
     k.Hinzufuegen(schueler)
-    assert len(k.l_aufgabe_2.Schueler) == 1
-    assert k.l_aufgabe_2.Schueler[0] == schueler
+    assert len(k.Schueler) == 1
+    assert k.Schueler[0] == schueler
 
 
 def test_klasse_entfernen(klasse, schueler_a, schueler_b):
