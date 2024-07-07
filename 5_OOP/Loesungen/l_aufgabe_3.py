@@ -35,8 +35,12 @@ class Schaf(Kreatur):
 
 
 class Kuh(Kreatur):
-    def __init__(self, position: Position):
+    def __init__(self, position: Position, gemolken: bool = False):
+        self.Gemolken = gemolken
         super().__init__(position)
+
+    def Melken(self):
+        self.Gemolken = True
 
 
 if __name__ == "__main__":

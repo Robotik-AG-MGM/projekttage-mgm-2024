@@ -181,6 +181,7 @@ def test_position_equality():
     pos3 = aufgabe_3.Position(4, 5, 6)
     assert pos1 == pos2
     assert not pos1 == pos3
+
 def test_kreatur_initialization():
     pos = aufgabe_3.Position(1, 2, 3)
     kreatur = aufgabe_3.Kreatur(pos)
@@ -192,6 +193,12 @@ def test_kreatur_movement():
     kreatur = aufgabe_3.Kreatur(pos1)
     kreatur.Bewegen(pos2)
     assert kreatur.Position == pos2
+
+def test_schaf_position_attribute():
+    pos = aufgabe_3.Position(1, 2, 3)
+    schaf = aufgabe_3.Schaf(pos)
+    assert hasattr(schaf, "Position"), "Position attribute does not exist"
+    assert isinstance(schaf.Position, aufgabe_3.Position), "Position attribute is not of type Position"
 
 def test_schaf_farbe_attribute():
     pos = aufgabe_3.Position(1, 2, 3)
@@ -233,9 +240,22 @@ def test_kuh_position_attribute():
     assert hasattr(kuh, "Position"), "Position attribute does not exist"
     assert isinstance(kuh.Position, aufgabe_3.Position), "Position attribute is not of type Position"
 
+def test_kuh_gemolken_attribute():
+    pos = aufgabe_3.Position(1, 2, 3)
+    kuh = aufgabe_3.Kuh(pos)
+    assert hasattr(kuh, "Gemolken"), "Gemolken attribute does not exist"
+    assert isinstance(kuh.Gemolken, bool), "gemolken attribute is not of type bool"
+
 def test_kuh_movement():
     pos1 = aufgabe_3.Position(1, 2, 3)
     pos2 = aufgabe_3.Position(4, 5, 6)
     kuh = aufgabe_3.Kuh(pos1)
     kuh.Bewegen(pos2)
     assert kuh.Position == pos2, "Kuh's Position should be pos2 after calling Bewegen"
+
+def test_kuh_melken():
+    pos = aufgabe_3.Position(-1, -2, -3)
+    kuh = aufgabe_3.Kuh(pos)
+    assert kuh.Gemolken == False, "Kuh's initial Gemolken-attribute should be False"
+    kuh.Melken()
+    assert kuh.Gemolken == True, "Kuh's Gemolken-attribute should be True after calling Melken"
