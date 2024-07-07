@@ -25,19 +25,19 @@ def schueler_b():
 # Test ob die Dateien existieren
 def test_aufgabe_1_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
-        "5_OOP/Loesungen/aufgabe_1.py"
+        "5_OOP/Aufgaben/aufgabe_1.py"
     ), "File does not exist"
 
 
 def test_aufgabe_2_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
-        "5_OOP/Loesungen/aufgabe_2.py"
+        "5_OOP/Aufgaben/aufgabe_2.py"
     ), "File does not exist"
 
 
 def test_aufgabe_3_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
-        "5_OOP/Loesungen/aufgabe_3.py"
+        "5_OOP/Aufgaben/aufgabe_3.py"
     ), "File does not exist"
 
 
