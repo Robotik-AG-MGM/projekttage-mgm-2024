@@ -1,43 +1,43 @@
 import os
 import pytest
-from aufgabe_1 import Mensch
-from aufgabe_2 import Schueler, Klasse
-from aufgabe_3 import Kreatur, Position, Schaf, Kuh
+import aufgabe_1
+import aufgabe_2
+import aufgabe_3 
 
 # fixtures
 @pytest.fixture(scope="function")
 def mensch():
-    yield Mensch("Luca", 17, 1.82, 75, "männlich")
+    yield aufgabe_1.Mensch("Luca", 17, 1.82, 75, "männlich")
 
 @pytest.fixture(scope="function")
 def klasse():
-    yield Klasse("10A")
+    yield aufgabe_2.Klasse("10A")
 
 @pytest.fixture(scope="function")
 def schueler_a():
-    yield Schueler("Max Mustermann")
+    yield aufgabe_2.Schueler("Max Mustermann")
 
 @pytest.fixture(scope="function")
 def schueler_b():
-    yield Schueler("Erika Mustermann")
+    yield aufgabe_2.Schueler("Erika Mustermann")
 
 
 # Test ob die Dateien existieren
 def test_aufgabe_1_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
-        "5_OOP/Loesungen/V_Aufgabe_1.py"
+        "5_OOP/Loesungen/aufgabe_1.py"
     ), "File does not exist"
 
 
 def test_aufgabe_2_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
-        "5_OOP/Loesungen/V_Aufgabe_2.py"
+        "5_OOP/Loesungen/aufgabe_2.py"
     ), "File does not exist"
 
 
 def test_aufgabe_3_exists():  # Funktionsfähigkeit durch Debug hergestellt.
     assert os.path.exists(
-        "5_OOP/Loesungen/V_Aufgabe_3.py"
+        "5_OOP/Loesungen/aufgabe_3.py"
     ), "File does not exist"
 
 
@@ -109,7 +109,7 @@ def test_schueler_noten_attribute(schueler_a):
 
 
 def test_schueler_note_erfahren():
-    schueler = Schueler("Max Mustermann",
+    schueler = aufgabe_2.Schueler("Max Mustermann",
                                     mathenote=4.5,
                                     deutschnote=3.7)
     assert schueler.Note_erfahren("Mathe") == 4.5
@@ -126,8 +126,8 @@ def test_klasse_hinzufuegen(klasse, schueler_a):
     k = klasse
     schueler = schueler_a
     k.Hinzufuegen(schueler)
-    assert len(k.Schueler) == 1
-    assert k.Schueler[0] == schueler
+    assert len(k.aufgabe_2.Schueler) == 1
+    assert k.aufgabe_2.Schueler[0] == schueler
 
 
 def test_klasse_entfernen(klasse, schueler_a, schueler_b):
@@ -162,80 +162,80 @@ def test_klasse_note_aendern(klasse, schueler_a):
 
 # teste Aufgabe 3
 def test_position_initialization():
-    pos = Position(1, 2, 3)
+    pos = aufgabe_3.Position(1, 2, 3)
     assert pos.X == 1
     assert pos.Y == 2
     assert pos.Z == 3
 
 def test_position_addition():
-    pos1 = Position(1, 2, 3)
-    pos2 = Position(4, 5, 6)
+    pos1 = aufgabe_3.Position(1, 2, 3)
+    pos2 = aufgabe_3.Position(4, 5, 6)
     result = pos1 + pos2
     assert result.X == 5
     assert result.Y == 7
     assert result.Z == 9
 
 def test_position_equality():
-    pos1 = Position(1, 2, 3)
-    pos2 = Position(1, 2, 3)
-    pos3 = Position(4, 5, 6)
+    pos1 = aufgabe_3.Position(1, 2, 3)
+    pos2 = aufgabe_3.Position(1, 2, 3)
+    pos3 = aufgabe_3.Position(4, 5, 6)
     assert pos1 == pos2
     assert not pos1 == pos3
 def test_kreatur_initialization():
-    pos = Position(1, 2, 3)
-    kreatur = Kreatur(pos)
+    pos = aufgabe_3.Position(1, 2, 3)
+    kreatur = aufgabe_3.Kreatur(pos)
     assert kreatur.Position == pos
 
 def test_kreatur_movement():
-    pos1 = Position(1, 2, 3)
-    pos2 = Position(4, 5, 6)
-    kreatur = Kreatur(pos1)
+    pos1 = aufgabe_3.Position(1, 2, 3)
+    pos2 = aufgabe_3.Position(4, 5, 6)
+    kreatur = aufgabe_3.Kreatur(pos1)
     kreatur.Bewegen(pos2)
     assert kreatur.Position == pos2
 
 def test_schaf_farbe_attribute():
-    pos = Position(1, 2, 3)
-    schaf = Schaf(pos, "gruen")
+    pos = aufgabe_3.Position(1, 2, 3)
+    schaf = aufgabe_3.Schaf(pos, "gruen")
     assert hasattr(schaf, "Farbe"), "Farbe attribute does not exist"
     assert isinstance(schaf.Farbe, str), "Farbe attribute is not of type str"
 
 def test_schaf_geschoren_attribute():
-    pos = Position(1, 2, 3)
-    schaf = Schaf(pos, "gruen")
+    pos = aufgabe_3.Position(1, 2, 3)
+    schaf = aufgabe_3.Schaf(pos, "gruen")
     assert hasattr(schaf, "Geschoren"), "Geschoren attribute does not exist"
     assert isinstance(schaf.Geschoren, bool), "Geschoren attribute is not of type bool"
 
 def test_schaf_scheeren():
-    pos = Position(1, 2, 3)
-    schaf = Schaf(pos, "gruen")
+    pos = aufgabe_3.Position(1, 2, 3)
+    schaf = aufgabe_3.Schaf(pos, "gruen")
     assert not schaf.Geschoren, "Schaf should not be geschoren initially"
     schaf.Scheeren()
     assert schaf.Geschoren, "Schaf should be geschoren after calling Scheeren"
 
 def test_schaf_faerben():
-    pos = Position(1, 2, 3)
-    schaf = Schaf(pos, "gruen")
+    pos = aufgabe_3.Position(1, 2, 3)
+    schaf = aufgabe_3.Schaf(pos, "gruen")
     assert schaf.Farbe == "gruen", "Schaf's initial Farbe should be 'gruen'"
     schaf.Faerben("blau")
     assert schaf.Farbe == "blau", "Schaf's Farbe should be 'blau' after calling Faerben"
 
 def test_schaf_bewegen():
-    pos1 = Position(1, 2, 3)
-    pos2 = Position(4, 5, 6)
-    schaf = Schaf(pos1, "gruen")
+    pos1 = aufgabe_3.Position(1, 2, 3)
+    pos2 = aufgabe_3.Position(4, 5, 6)
+    schaf = aufgabe_3.Schaf(pos1, "gruen")
     assert schaf.Position == pos1, "Schaf's initial Position should be pos1"
     schaf.Bewegen(pos2)
     assert schaf.Position == pos2, "Schaf's Position should be pos2 after calling Bewegen"
 
 def test_kuh_position_attribute():
-    pos = Position(1, 2, 3)
-    kuh = Kuh(pos)
+    pos = aufgabe_3.Position(1, 2, 3)
+    kuh = aufgabe_3.Kuh(pos)
     assert hasattr(kuh, "Position"), "Position attribute does not exist"
-    assert isinstance(kuh.Position, Position), "Position attribute is not of type Position"
+    assert isinstance(kuh.Position, aufgabe_3.Position), "Position attribute is not of type Position"
 
 def test_kuh_movement():
-    pos1 = Position(1, 2, 3)
-    pos2 = Position(4, 5, 6)
-    kuh = Kuh(pos1)
+    pos1 = aufgabe_3.Position(1, 2, 3)
+    pos2 = aufgabe_3.Position(4, 5, 6)
+    kuh = aufgabe_3.Kuh(pos1)
     kuh.Bewegen(pos2)
     assert kuh.Position == pos2, "Kuh's Position should be pos2 after calling Bewegen"
