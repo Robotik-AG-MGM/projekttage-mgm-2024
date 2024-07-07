@@ -184,7 +184,7 @@ def test_position_equality():
     pos2 = l_aufgabe_3.Position(1, 2, 3)
     pos3 = l_aufgabe_3.Position(4, 5, 6)
     assert pos1 == pos2
-    assert not pos1 == pos3
+    assert pos1 != pos3
 
 
 def test_kreatur_initialization():
