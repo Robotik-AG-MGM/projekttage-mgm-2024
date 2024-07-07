@@ -22,7 +22,7 @@ class Kreatur:
 
 
 class Schaf(Kreatur):
-    def __init__(self, position: Position, farbe: str, geschoren=False):
+    def __init__(self, position: Position, farbe: str, geschoren: bool=False):
         self.Farbe = farbe
         self.Geschoren = geschoren
         super().__init__(position)

@@ -24,11 +24,9 @@ class Schueler:
 
 
 class Klasse:
-    def __init__(self, klasse: str, schueler: list = []):
+    def __init__(self, klasse: str, schueler: list = None):
         self.ID = klasse
-        # typehints sind nicht verbindlich ind erzugen kein zwang
-        # oder abgeändertes Verhalten
-        self.Schueler = schueler
+        self.Schueler = schueler if schueler is not None else []
 
     def Hinzufuegen(self, schueler: Schueler):
         self.Schueler.append(schueler)
