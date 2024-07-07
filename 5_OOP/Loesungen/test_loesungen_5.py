@@ -196,8 +196,9 @@ def test_kreatur_movement():
 
 def test_schaf_position_attribute():
     pos = l_aufgabe_3.Position(1, 2, 3)
-    schaf = l_aufgabe_3.Schaf(pos)
+    schaf = l_aufgabe_3.Schaf(pos, "weiss")
     assert hasattr(schaf, "Position"), "Position attribute does not exist"
+    assert hasattr(schaf, "Farbe"), "Farbe attribute does not exist"
     assert isinstance(schaf.Position, l_aufgabe_3.Position), "Position attribute is not of type Position"
 
 def test_schaf_farbe_attribute():
