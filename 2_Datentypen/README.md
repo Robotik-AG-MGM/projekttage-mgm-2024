@@ -55,7 +55,7 @@ Die `y`speichert den `String-Wert` 5
 ## **2.2 Listen**
 Listen funktionieren wie eine Variable, jedoch kann eine Liste mehrere Werte speichern. Die Liste kann man auch beliebig benennen. 
 
-Für Listen verwendet man [eckige Klammern] (alt gr + 8)
+Für Listen verwendet man `[eckige Klammern]` (alt gr + 8)
 
 z.B.:
 
@@ -66,7 +66,7 @@ liste_x = [1,2,3,4]
 ## **2.3 Tuples**
 Tuples sind wie `Listen`, man kann Werte speichern, die man nicht ändern kann. Tuples laufen schneller beim Rechnen. 
 
-Tuples schreibt man in (normalen Klammern)
+Tuples schreibt man in `(normalen Klammern)`
 
 z.B.:
 
