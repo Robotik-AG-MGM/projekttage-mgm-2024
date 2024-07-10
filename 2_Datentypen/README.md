@@ -8,7 +8,7 @@ Sie dienen in Python hauptsächlich dafür Text darzustellen. Diese stehen in `"
 
 Mit `Strings` kann man **<ins>NICHT</ins>** rechnen. Sollte man das tun, so reiht es die Wörter/Zahlen aneinander.
 
-Um Strings anzuzeigen Verwenden wir `print()`
+Um Dinge in Python anzuzeigen Verwenden wir `print()`
 <p>z.B.:</p>
 
 ```python
