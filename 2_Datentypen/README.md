@@ -81,7 +81,7 @@ Dictionaries sind wie `Listen und Tuples` aber jeder Wert speichert einen eigene
 z.B.:
 
 ```python
-dict_x = {"Alter": 13, "Name": "Fynn", "beschreibendesWort":"obdachlos"}
+dict_x = {"Alter": 43, "Name": "Tobi", "Job":"Busfahrer"}
 ```
 Um den Wert "Alter" aufzurufen, schreiben wir `dict_x["Alter"]`
 
