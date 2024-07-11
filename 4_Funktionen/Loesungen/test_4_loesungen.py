@@ -1,4 +1,4 @@
-import l_aufgabe_1
+import 4_Funktionen.Loesungen.l_aufgabe_1 as l_aufgabe_1
 import l_aufgabe_2
 import l_aufgabe_3
 import l_aufgabe_4
