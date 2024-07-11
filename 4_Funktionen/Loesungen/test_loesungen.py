@@ -1,10 +1,3 @@
-import sys
-import os
-
-# Add the directory containing 'l_aufgabe_1.py' to the Python path
-module_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(module_dir)
-
 import l_aufgabe_1
 import l_aufgabe_2
 import l_aufgabe_3
