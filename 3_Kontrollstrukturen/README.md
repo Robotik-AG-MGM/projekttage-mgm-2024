@@ -29,7 +29,7 @@ Wichtige Vergleichsoperatoren:
 
 # Boolesche Algebra
 
-In diesem Notebook werden wir die Boolesche Algebra in Python kennenlernen. Boolesche Algebra ist ein wichtiger Teil der Logik und wird in der Programmierung häufig verwendet.
+In diesem Abschnitt werden wir die Boolesche Algebra in Python kennenlernen. Boolesche Algebra ist ein wichtiger Teil der Logik und wird in der Programmierung häufig verwendet.
 
 ## Boolesche Operatoren in Python
 
@@ -52,7 +52,7 @@ Eine Wahrheitstabelle zeigt alle möglichen Kombinationen von Eingaben und das E
 
 In diesem Notebook werden wir die Verwendung von Bedingungen (if, else, elif) in Python kennenlernen. Bedingungen ermöglichen es uns, Codeblöcke nur dann auszuführen, wenn bestimmte Bedingungen erfüllt sind.
 
-## Grundsyntax:
+## Grundsyntax
 
 ```python
 if Bedingung:
@@ -61,7 +61,7 @@ else:
     # Code wird ausgeführt, wenn die Bedingung falsch ist
 ```
 
-## Erweiterte Bedingungen mit `elif`:
+## Erweiterte Bedingungen mit `elif`
 
 Wir können auch `elif` verwenden, um zusätzliche Bedingungen zu überprüfen. Wenn die erste Bedingung falsch ist, aber die `elif`-Bedingung wahr ist, wird der zugehörige Codeblock ausgeführt.
 
@@ -111,14 +111,13 @@ Der Modulo-Operator ist besonders nützlich, wenn wir überprüfen moechten, ob 
 
 In diesem Notebook werden wir die Verwendung von Schleifen in Python kennenlernen. Schleifen ermöglichen es uns, Codeblöcke mehrmals auszuführen.
 
-
-## while-Schleife:
+## while-Schleife
 
 # Schleifen (while, for)
 
 In diesem Notebook werden wir die Verwendung von Schleifen in Python kennenlernen. Schleifen ermöglichen es uns, Codeblöcke mehrmals auszuführen.
 
-## while-Schleife:
+## while-Schleife
 
 Eine while-Schleife wird verwendet, um einen Codeblock solange zu wiederholen, wie eine bestimmte Bedingung wahr ist. Die Bedingung wird vor jeder Iteration überprüft. Wenn die Bedingung wahr ist, wird der Codeblock ausgeführt. Wenn die Bedingung falsch ist, wird die Schleife beendet und die Ausführung wird fortgesetzt.
 
@@ -152,7 +151,7 @@ Counter: 4
 
 Die while-Schleife bietet eine flexible Möglichkeit, Codeblöcke zu wiederholen, solange eine bestimmte Bedingung erfüllt ist. Es ist wichtig sicherzustellen, dass die Bedingung irgendwann falsch wird, um eine Endlosschleife zu vermeiden.
 
-## for-Schleife:
+## for-Schleife
 
 Eine for-Schleife wird verwendet, um einen Codeblock für jedes Element in einer Sequenz auszuführen. Die Sequenz kann eine Liste, ein Tupel, ein String oder ein anderer iterierbarer Datentyp sein.
 
@@ -182,4 +181,3 @@ Orange
 ```
 
 Die for-Schleife ist besonders nützlich, wenn Sie eine bestimmte Aktion für jedes Element in einer Sequenz ausführen möchten.
-
