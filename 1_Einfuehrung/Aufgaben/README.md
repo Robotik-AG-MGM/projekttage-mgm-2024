@@ -6,7 +6,7 @@
 
 ### Schritt-für-Schritt-Anleitung zur Ausführung von Python-Code in Jupyter Labs:
 1. **Neues Python-Datei erstellen:**
-   - Erstelle eine neue Python-Datei namens `aufgab_1.py`
+   - Erstelle eine neue Python-Datei namens `aufgabe_1.py`
 
 2. **Python-Code eingeben:**
    - Gebe in der ersten zeile folgenden Befehl ein: `print("Hallo, Welt!")`.
@@ -20,7 +20,7 @@
 
 ### Schritt-für-Schritt-Anleitung zur Ausführung von Python-Code in Jupyter Labs:
 1. **Neues Python-Datei erstellen:**
-   - Erstelle eine neue Python-Datei namens `aufgaeb_2.py`
+   - Erstelle eine neue Python-Datei namens `aufgabe_2.py`
 
 2. **Python-Code eingeben:**
    - Erstelle eine Variable `name` und `alter` und weise ihnen `"Max Mustermann"` und `20` zu.
