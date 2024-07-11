@@ -4,6 +4,7 @@ import aufgabe_3
 import aufgabe_4
 import aufgabe_5
 
+
 def test_aufgabe_1(capfd):
     aufgabe_1.hallo_welt()
     out = capfd.readouterr()
