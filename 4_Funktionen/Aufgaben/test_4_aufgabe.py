@@ -4,7 +4,6 @@ import aufgabe_3
 import aufgabe_4
 import aufgabe_5
 
-
 def test_aufgabe_1(capfd):
     aufgabe_1.hallo_welt()
     out = capfd.readouterr()
@@ -18,15 +17,15 @@ def test_aufgabe_2():
 
 
 def test_aufgabe_3():
-    assert aufgabe_3.ist_positiv(1) == True
-    assert aufgabe_3.ist_positiv(0) == False
-    assert aufgabe_3.ist_positiv(-1) == False
+    assert aufgabe_3.ist_positiv(1) is True
+    assert aufgabe_3.ist_positiv(0) is False
+    assert aufgabe_3.ist_positiv(-1) is False
 
 
 def test_aufgabe_4():
-    assert aufgabe_4.ist_teilbar(4, 2) == True
-    assert aufgabe_4.ist_teilbar(4, 3) == False
-    assert aufgabe_4.ist_teilbar(4, 4) == True
+    assert aufgabe_4.ist_teilbar(4, 2) is True
+    assert aufgabe_4.ist_teilbar(4, 3) is False
+    assert aufgabe_4.ist_teilbar(4, 4) is True
 
 
 def test_aufgabe_5(capfd):
