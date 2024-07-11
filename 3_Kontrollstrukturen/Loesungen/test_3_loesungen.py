@@ -110,7 +110,7 @@ def test_aufgabe_8():
     output = subprocess.check_output(
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_8.py"]
     )
-    assert output == b"Die Zahl ist groesser als 5\r\n", "Output is wrong"
+    assert output == b"Die Zahl ist groesser als 5\n", "Output is wrong"
 
 
 def test_aufgabe_9_exists():
@@ -124,7 +124,7 @@ def test_aufgabe_9():
     output = subprocess.check_output(
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_9.py"]
     )
-    assert output == b"Gut!\r\n", "Output is wrong"
+    assert output == b"Gut!\n", "Output is wrong"
 
 
 def test_aufgabe_10_exists():
@@ -145,7 +145,7 @@ def test_aufgabe_11():
     output = subprocess.check_output(
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_11.py"]
     )
-    assert output == b"Die Zahl ist durch 3 teilbar\r\n", "Output is wrong"
+    assert output == b"Die Zahl ist durch 3 teilbar\n", "Output is wrong"
 
 
 def test_aufgabe_12_exists():
@@ -169,7 +169,7 @@ def test_aufgabe_13():
     output = subprocess.check_output(
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_13.py"]
     )
-    assert output == b"1\r\n2\r\n3\r\n4\r\n5\r\n", "Output is wrong"
+    assert output == b"1\n2\n3\n4\n5\n", "Output is wrong"
 
 
 def test_aufgabe_14_exists():
@@ -182,7 +182,7 @@ def test_aufgabe_14():
     output = subprocess.check_output(
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_14.py"]
     )
-    assert output == b"Apfel\r\nBanane\r\nOrange\r\nErdbeere\r\n", "Output is wrong"
+    assert output == b"Apfel\nBanane\nOrange\nErdbeere\n", "Output is wrong"
 
 
 def test_aufgabe_15_exists():
@@ -195,7 +195,7 @@ def test_aufgabe_15():
     output = subprocess.check_output(
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_15.py"]
     )
-    assert output == b"2\r\n4\r\n6\r\n8\r\n10\r\n", "Output is wrong"
+    assert output == b"2\n4\n6\n8\n10\n", "Output is wrong"
 
 
 def test_aufgabe_16_exists():
@@ -219,4 +219,4 @@ def test_aufgabe_17():
     output = subprocess.check_output(
         ["python", "3_Kontrollstrukturen/Loesungen/l_aufgabe_17.py"]
     )
-    assert output == b"1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n", "Output is wrong"
+    assert output == b"1\n2\n3\n4\n5\n6\n7\n8\n9\n", "Output is wrong"
