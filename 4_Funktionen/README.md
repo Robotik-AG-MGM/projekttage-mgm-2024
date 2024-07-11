@@ -4,8 +4,8 @@ In  Python  sind Funktionen eine Möglichkeit, Code zu organisieren und wiederzu
 
 ## Was sind Funktionen in  Python?
 
--   **Funktionen**  sind benannte Codeblöcke, die eine spezifische Aufgabe ausführen, wenn sie aufgerufen werden.
--   Sie helfen dabei, Code zu strukturieren, zu organisieren und wiederzuverwenden.
+- **Funktionen**  sind benannte Codeblöcke, die eine spezifische Aufgabe ausführen, wenn sie aufgerufen werden.
+- Sie helfen dabei, Code zu strukturieren, zu organisieren und wiederzuverwenden.
 
 ## Funktionen definieren
 
