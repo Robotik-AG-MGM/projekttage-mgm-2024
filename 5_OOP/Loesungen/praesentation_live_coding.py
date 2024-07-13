@@ -13,11 +13,11 @@ class Haus:
         self.__private_Methode()
     def __eq__(self, other: 'Haus') -> bool:    # Auch zeigen, dass nicht alles übereinstimmen muss
         res = True
-        if self.Besitzer != other.Besitzer: 
+        if self.Besitzer != other.Besitzer:
             res = False
-        if self.Baujahr != other.Baujahr: 
+        if self.Baujahr != other.Baujahr:
             res = False
-        if self.Flaeche != other.Flaeche: 
+        if self.Flaeche != other.Flaeche:
             res = False
         return res
 
@@ -39,7 +39,8 @@ Anna = Haus("Anna Becker", "2001", 60)              # dürfen SUS ausdenken
 Anna.Flaeche = 70                                   # dürfen SUS ausdenken
 print(Anna.Flaeche)
 print(Anna.Wert_berechnen())
-Anna.__private_Methode()    # liefert Error, ist absicht, wird im Live-Coding entfernt
+Anna.__private_Methode()    # pylint: disable=protected-access
+# liefert Error, ist absicht, wird im Live-Coding entfernt
 Anna.Zugriff_auf_private_Methode()
 
 Peter = Haus("Peter Mustermann", "2001", 40)        # dürfen SUS ausdenken
