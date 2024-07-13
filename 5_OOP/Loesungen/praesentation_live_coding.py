@@ -4,21 +4,26 @@ class Haus:
         self.Baujahr = baujahr
         self.Flaeche = flaeche
     def Wert_berechnen(self) -> float:
-        return 3342 * float(self.Flaeche) # 3342 Euro/Quadratmeter ist in Müllheim etwa der Wohnungspreis
+        return 3342 * float(self.Flaeche)
+    # 3342 Euro/Quadratmeter ist in Müllheim etwa der Wohnungspreis
         # Hier Frage, wie man berechnen kann (Muss nicht den Vorgaben entsprechen)
     def __private_Methode(self):
         print("Wurde aufgerufen")
     def Zugriff_auf_private_Methode(self):
         self.__private_Methode()
-    def __eq__(self, other: 'Haus') -> bool:        # Auch zeigen, dass nicht alles übereinstimmen muss
+    def __eq__(self, other: 'Haus') -> bool:    # Auch zeigen, dass nicht alles übereinstimmen muss
         res = True
-        if self.Besitzer != other.Besitzer: res = False
-        if self.Baujahr != other.Baujahr: res = False
-        if self.Flaeche != other.Flaeche: res = False
+        if self.Besitzer != other.Besitzer: 
+            res = False
+        if self.Baujahr != other.Baujahr: 
+            res = False
+        if self.Flaeche != other.Flaeche: 
+            res = False
         return res
 
 class Mietwohnung(Haus):
-    def __init__(self, besitzer: str, baujahr: str, flaeche: int, zimmer: int, stockwerk: int = 0) -> None: # Default-Parameter
+    def __init__(self, besitzer: str, baujahr: str, flaeche: int, zimmer: int, stockwerk: int = 0):
+        # Default-Parameter
         self.Mietpreis = self.Miete_berechnen()
         self.Zimmer = zimmer
         self.Stockwerk = stockwerk
@@ -34,7 +39,7 @@ Anna = Haus("Anna Becker", "2001", 60)              # dürfen SUS ausdenken
 Anna.Flaeche = 70                                   # dürfen SUS ausdenken
 print(Anna.Flaeche)
 print(Anna.Wert_berechnen())
-Anna.__private_Methode()                            # liefert Error, ist absicht, wird im Live-Coding entfernt
+Anna.__private_Methode()    # liefert Error, ist absicht, wird im Live-Coding entfernt
 Anna.Zugriff_auf_private_Methode()
 
 Peter = Haus("Peter Mustermann", "2001", 40)        # dürfen SUS ausdenken
