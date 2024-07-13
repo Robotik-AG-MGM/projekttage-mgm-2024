@@ -25,7 +25,7 @@ class Buch:
 
 Harry_Potter_1 = Buch("Harry Potter", "", "Joanne K. Rowling")
 Harry_Potter_1.Untertitel = "Stein der Weisen"
-Harry_Potter_1.eine_Methode()
+Harry_Potter_1.eine_Methode()   # Ausage: Das Buch 'Harry Potter : Stein der Weisen' wurde von Joanne K. Rowling geschrieben.
 print(Harry_Potter_1.Methode_mit_Rueckgabe("Joanne K. Rowling")) # Ausgabe: True
 ```
 ### Attribute
