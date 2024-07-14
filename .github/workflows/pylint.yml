@@ -18,6 +18,8 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pylint
+        pip install pytest
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py') --disable=C0116,C0114,C0103,R1716,E1101,R0801,E0401
+        pylint $(git ls-files '*.py') --disable=C0116,C0114,C0103,C0115,R0913,R0903,W0621,E1101,R0801,E0401
+      
