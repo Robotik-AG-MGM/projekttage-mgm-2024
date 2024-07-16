@@ -1,30 +1,46 @@
+from l_variablen_aufgaben import (
+    gruss,
+    teilwort,
+    gruss_upper,
+    ergebnis_1,
+    ergebnis_2,
+    ergebnis_3,
+    ist_wahr,
+)
+from l_listen_aufgaben import (
+    wochentage,
+    m,
+    k,
+    d,
+    neuer_durchschnitt,
+    zahlen,
+    Namen,
+    matrix,
+    element,
+)
+from l_tuples_aufgaben import Zahlen, Farben
+from l_dictionary_aufgaben import kontakte, nummern
+
+
 # Variablen Aufgaben Tests
 def test_variablen_aufgabe_1():
-    from l_variablen_aufgaben import gruss, teilwort, gruss_upper
-
     assert gruss == "Hallo, Welt"
     assert teilwort == "Welt"
     assert gruss_upper == "HALLO, WELT"
 
 
 def test_variablen_aufgabe_2():
-    from l_variablen_aufgaben import ergebnis_1, ergebnis_2, ergebnis_3
-
     assert isinstance(ergebnis_1, float)
     assert isinstance(ergebnis_2, float)
     assert isinstance(ergebnis_3, float)
 
 
 def test_variablen_aufgabe_3():
-    from l_variablen_aufgaben import ist_wahr
-
     assert ist_wahr is True
 
 
 # Listen Aufgaben Tests
 def test_listen_aufgabe_1():
-    from l_listen_aufgaben import wochentage
-
     assert wochentage == [
         "Montag",
         "Dienstag",
@@ -36,8 +52,6 @@ def test_listen_aufgabe_1():
 
 
 def test_listen_aufgabe_2():
-    from l_listen_aufgaben import m, k, d, neuer_durchschnitt, zahlen
-
     assert m == max(zahlen)
     assert k == min(zahlen)
     assert d == sum(zahlen) / len(zahlen)
@@ -45,8 +59,6 @@ def test_listen_aufgabe_2():
 
 
 def test_listen_aufgabe_3():
-    from l_listen_aufgaben import Namen
-
     tmp = Namen.copy()
     tmp.sort()
 
@@ -54,32 +66,22 @@ def test_listen_aufgabe_3():
 
 
 def test_listen_aufgabe_4():
-    from l_listen_aufgaben import matrix, element
-
     assert matrix[1][2] == element
 
 
 # Tuples Aufgaben Tests
 def test_tuples_aufgabe_1():
-    from l_tuples_aufgaben import Zahlen
-
     assert isinstance(Zahlen, tuple)
 
 
 def test_tuples_aufgabe_2():
-    from l_tuples_aufgaben import Farben
-
     assert isinstance(Farben, tuple)
 
 
 # Dictionary Aufgaben Tests
 def test_dictionary_aufgabe_1():
-    from l_dictionary_aufgaben import kontakte
-
     assert isinstance(kontakte, dict)
 
 
 def test_dictionary_aufgabe_2():
-    from l_dictionary_aufgaben import nummern
-
     assert sorted(nummern) == nummern
