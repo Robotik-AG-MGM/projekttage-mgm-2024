@@ -1,60 +1,85 @@
-import variablen_aufgaben
-import listen_aufgaben
-import tuples_aufgaben
-import dictionary_aufgaben
+# Variablen Aufgaben Tests
+def test_variablen_aufgabe_1():
+    from l_variablen_aufgaben import gruss, teilwort, gruss_upper
+
+    assert gruss == "Hallo, Welt"
+    assert teilwort == "Welt"
+    assert gruss_upper == "HALLO, WELT"
 
 
-def test_gruss():
-    assert variablen_aufgaben.gruss == "Hallo, Welt"
+def test_variablen_aufgabe_2():
+    from l_variablen_aufgaben import ergebnis_1, ergebnis_2, ergebnis_3
+
+    assert isinstance(ergebnis_1, float)
+    assert isinstance(ergebnis_2, float)
+    assert isinstance(ergebnis_3, float)
 
 
-def test_ergebnis():
-    assert variablen_aufgaben.ergebnis == 12.3
+def test_variablen_aufgabe_3():
+    from l_variablen_aufgaben import ist_wahr
+
+    assert ist_wahr is True
 
 
-def test_ist_wahr():
-    assert variablen_aufgaben.ist_wahr is True
+# Listen Aufgaben Tests
+def test_listen_aufgabe_1():
+    from l_listen_aufgaben import wochentage
 
-
-def test_wochentage():
-    assert listen_aufgaben.wochentage == [
+    assert wochentage == [
         "Montag",
         "Dienstag",
         "Mittwoch",
-        "Donnerstag",
         "Freitag",
         "Samstag",
         "Sonntag",
     ]
 
 
-def test_max_zahl():
-    assert listen_aufgaben.max_zahl == 8
+def test_listen_aufgabe_2():
+    from l_listen_aufgaben import m, k, d, neuer_durchschnitt, zahlen
+
+    assert m == max(zahlen)
+    assert k == min(zahlen)
+    assert d == sum(zahlen) / len(zahlen)
+    assert neuer_durchschnitt == sum(zahlen) / len(zahlen)
 
 
-def test_min_zahl():
-    assert listen_aufgaben.min_zahl == 1
+def test_listen_aufgabe_3():
+    from l_listen_aufgaben import Namen
+
+    tmp = Namen.copy()
+    tmp.sort()
+
+    assert Namen == tmp
 
 
-def test_namen():
-    assert listen_aufgaben.namen == ["Anna", "Bernd", "Clara", "David"]
+def test_listen_aufgabe_4():
+    from l_listen_aufgaben import matrix, element
+
+    assert matrix[1][2] == element
 
 
-def test_zahlen_tuple():
-    assert tuples_aufgaben.zahlen_tuple == (1, 3, 5, 7)
+# Tuples Aufgaben Tests
+def test_tuples_aufgabe_1():
+    from l_dictionary_aufgaben import Zahlen
+
+    assert isinstance(Zahlen, tuple)
 
 
-def test_farbe():
-    assert tuples_aufgaben.farben[1] == "Blau"
+def test_tuples_aufgabe_2():
+    from tuples_aufgaben import Farben
+
+    assert isinstance(Farben, tuple)
 
 
-def test_person_alter():
-    assert dictionary_aufgaben.person["Alter"] == 30
+# Dictionary Aufgaben Tests
+def test_dictionary_aufgabe_1():
+    from l_dictionary_aufgaben import kontakte
+
+    assert isinstance(kontakte, dict)
 
 
-def test_telefonnummer():
-    assert dictionary_aufgaben.telefonbuch["Bernd"] == "5678"
+def test_dictionary_aufgabe_2():
+    from l_dictionary_aufgaben import nummern
 
-
-def test_person_beruf():
-    assert dictionary_aufgaben.person["Beruf"] == "Lehrerin"
+    assert sorted(nummern) == nummern

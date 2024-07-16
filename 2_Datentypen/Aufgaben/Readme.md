@@ -1,99 +1,103 @@
-## **Aufgaben**
+#### Variablen
 
-### **Variablen**
+Erstelle eine Pythondatei mit dem Namen `variablen_aufgaben.py`
 
-1. **Erstelle eine String-Variable, die das Wort "Hallo, Welt" enthält und gib sie aus.**
+##### Aufgabe 1
 
-    ```python
-    gruss = "Hallo, Welt"
-    print(gruss)
-    ```
+- Erstelle eine String-Variable `gruss`, die das Wort "Hallo, Welt" enthält und gib sie aus.
+- Extrahiere das Teilwort `Welt` aus `gruss` und speichere es in `teilwort`.
+- Wandle `gruss` in Großbuchstaben um und speicher das Ergebnis in `gruss_upper`.
 
-2. **Erstelle eine Integer-Variable und eine Float-Variable, addiere diese und gib das Ergebnis als dritte Variable aus.**
+##### Aufgabe 2
 
-    ```python
-    int_var = 5
-    float_var = 7.3
-    ergebnis = int_var + float_var
-    print(ergebnis)
-    ```
+Erstelle 2 Variablen. Eine davon soll vom Typ `float` sein und eine soll vom Typ `integer` sein.
 
-3. **Erstelle eine Boolean-Variable und gib den Wert in der Konsole aus.**
+- Multipliziere beide Variablen und speichere das Ergebnis in der Variable `ergebnis_1`.
+- Multipliziere die `integer`-Variable mit der `float`-Variable. Speichere das Ergebnis in `ergebnis_2`. Welchen Datentyp hat `ergebnis_2`?
+- Wandle die `integer`-Variable in eine `float`-Variable um und speichere das Ergebnis in `ergebnis_3`.
 
-    ```python
-    ist_wahr = True
-    print(ist_wahr)
-    ```
+##### Aufgabe 3
 
-### **Listen**
+Erstelle eine Boolean-Variable `ist_wahr` mit dem Wert `True` und gib den Wert in der Konsole aus.
 
-1. **Erstelle eine Liste, die `wochentage` heißt.**
-    - Schreibe die Tage von Montag bis Samstag in die Liste und gib die Liste aus.
-    - Füge mit `wochentage.append()` Sonntag hinzu und gib die Liste nochmal aus.
+#### Listen
 
-    ```python
-    wochentage = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
-    print(wochentage)
-    wochentage.append("Sonntag")
-    print(wochentage)
-    ```
+Erstelle eine Pythondatei mit dem Namen `listen_aufgaben.py`
 
-2. **Erstelle eine Liste von Zahlen, finde die maximale und minimale Zahl und gib sie aus.**
+##### Aufgabe 1
 
-    ```python
-    zahlen = [3, 5, 7, 2, 8, 1, 4]
-    max_zahl = max(zahlen)
-    min_zahl = min(zahlen)
-    print("Maximale Zahl:", max_zahl)
-    print("Minimale Zahl:", min_zahl)
-    ```
+Erstelle eine Liste, die `wochentage` heißt.
 
-3. **Erstelle eine Liste von Namen und sortiere die Liste alphabetisch.**
+- Schreibe die Tage von Montag bis Samstag in die Liste und gib die Liste aus.
+- Füge mit `wochentage.append()` Sonntag hinzu und gib die Liste nochmal aus.
+- Ändere den Eintrag "Donnerstag" zu "Doenerstag".
+- Entferne "Doenerstag" aus der Liste.
 
-    ```python
-    namen = ["Anna", "Bernd", "Clara", "David"]
-    namen.sort()
-    print(namen)
-    ```
+##### Aufgabe 2
 
-### **Tuples**
+Erstelle eine Liste von Zahlen mit dem Namen `zahlen`.
 
-1. **Erstelle ein Tuple mit verschiedenen Zahlen und gib es aus.**
+- Finde die größte Zahl und speichere sie in der Variable `m`.
+- Finde die kleinste Zahl und speichere sie in der Variable `k`.
+- Berechne den Durchschnitt der Liste und speichere diesen in der Variable `d`.
+- Füge eine neue Zahl zur Liste hinzu und berechne den neuen Durchschnitt.
 
-    ```python
-    zahlen_tuple = (1, 3, 5, 7)
-    print(zahlen_tuple)
-    ```
+##### Aufgabe 3
 
-2. **Erstelle ein Tuple von Farben und greife auf die zweite Farbe zu.**
+Erstelle eine Liste mit dem Namen `Namen`.
 
-    ```python
-    farben = ("Rot", "Blau", "Grün", "Gelb")
-    print(farben[1])  # Ausgabe: Blau
-    ```
+- Die Liste soll ein paar Namen enthalten.
+- Sortiere die Liste alphabetisch.
+- Füge einen neuen Namen hinzu und sortiere die Liste erneut.
+- Entferne einen Namen aus der Liste.
 
-### **Dictionary**
+##### Aufgabe 4
 
-1. **Erstelle ein Dictionary mit Namen und Alter einer Person und gib das Alter aus.**
+Erstelle eine 2D-Liste mit dem Namen `matrix`.
 
-    ```python
-    person = {"Name": "Anna", "Alter": 30}
-    print(person["Alter"])
-    ```
+- Die `matrix` soll drei Listen enthalten, jede mit drei Zahlen.
+- Greife auf das Element in der zweiten Liste, dritte Position zu und speichere  den wert in `element`
+- Ändere den Wert einses anderen Elements und gib die gesamte `matrix` aus.
 
-2. **Erstelle ein Dictionary, das die Telefonnummern von Personen speichert. Greife auf die Telefonnummer einer Person zu.**
+#### Tuples
 
-    ```python
-    telefonbuch = {"Anna": "1234", "Bernd": "5678", "Clara": "91011"}
-    print(telefonbuch["Bernd"])  # Ausgabe: 5678
-    ```
+Erstelle eine Pythondatei mit dem Namen `tuples_aufgaben.py`
 
-3. **Füge einem bestehenden Dictionary ein neues Schlüssel-Wert-Paar hinzu und gib das Dictionary aus.**
+##### Aufgabe 1
 
-    ```python
-    person = {"Name": "Anna", "Alter": 30}
-    person["Beruf"] = "Lehrerin"
-    print(person)
-    ```
+Erstelle ein Tuple mit dem Namen `Zahlen`.
 
----
+- Das Tuple soll verschiedene Zahlen beinhalten.
+- Wie unterscheidet sich ein Tuple von einer Liste?
+- Versuche, ein Element im Tuple zu ändern und beobachte, was passiert.
+
+##### Aufgabe 2
+
+Erstelle ein Tuple `Farben`mit beliebig fielen Farben
+
+- Versuche, das Tuple zu sortieren. Was passiert?
+
+#### Dictionary
+
+Erstelle eine Pythondatei mit dem Namen `dictionary_aufgaben.py`
+
+##### Aufgabe 1
+
+Erstelle ein Dictionary `kontakte` mit Namen und Telefonnummer einer Person.
+
+- Gib die Nummer einer beliebigen Person aus.
+- Wie kannst du verhindern, dass ein Fehler geworfen wird, wenn die Person nicht in `kontakte` gespeichert ist? Nutze dafür die Methode `get()`.
+
+##### Aufgabe 2
+
+Erstelle eine Liste mit dem Namen `nummern`.
+
+- `nummern` soll alle Telefonnummern von `kontakte` beinhalten.
+- Sortiere die Liste `nummern`.
+
+##### Aufgabe 3
+
+Füge `kontakte` eine neue Person mit Telefonnummer hinzu.
+
+- Entferne eine Person aus `kontakte`.
+- Ändere die Telefonnummer einer bestehenden Person in `kontakte`.
