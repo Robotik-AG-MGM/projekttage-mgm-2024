@@ -61,13 +61,13 @@ def test_listen_aufgabe_4():
 
 # Tuples Aufgaben Tests
 def test_tuples_aufgabe_1():
-    from l_dictionary_aufgaben import Zahlen
+    from l_tuples_aufgaben import Zahlen
 
     assert isinstance(Zahlen, tuple)
 
 
 def test_tuples_aufgabe_2():
-    from tuples_aufgaben import Farben
+    from l_tuples_aufgaben import Farben
 
     assert isinstance(Farben, tuple)
 
